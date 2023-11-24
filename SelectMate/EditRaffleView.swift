@@ -39,51 +39,80 @@ struct EditRaffleView: View {
                     }
                 }
                 
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
-                    ForEach(raffle.options) { option in
-                        let shape = RoundedRectangle(cornerRadius: 12)
-                        let text = Text(option.content)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                            .foregroundColor(.black)
-                        
-                        ZStack {
-                            Group {
-                                shape.fill(.white)
-                                shape.strokeBorder(lineWidth: 2)
-                                text
+                LazyVGrid(columns: [GridItem(), GridItem()], content: {
+                    ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
+                        CardView(card: Card(content: option.content, flipped: option.flipped))
+                            .aspectRatio(3/2, contentMode: .fit)
+                            .onTapGesture {
+                                withAnimation {
+                                    option.flipped.toggle()
+                                }
                             }
-                            .opacity(option.flipped ? 0 : 1)
-                            
-                            Group {
-                                shape.fill()
-                                text.opacity(0)
-                            }
-                            .opacity(option.flipped ? 1 : 0)
-                        }
-                        .aspectRatio(3/4, contentMode: .fit)
-                        .onTapGesture {
-                            option.flipped.toggle()
-                        }
                     }
                 })
                 .foregroundColor(.orange)
-                    
+                
             }
         }
+        .overlay(alignment: .bottom, content: {
+            if raffle.options.count >= 2 {
+                Button("Escolha para mim!", action: raffleOption)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(.orange)
+                    .cornerRadius(8)
+                    .shadow(radius: 16, x: 0, y: 4)
+            }
+        })
         .navigationTitle(raffle.title)
-        .navigationBarTitleDisplayMode(.large)
-        .toolbarRole(.editor)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button("Shuffle", systemImage: "shuffle", action: shuffle)
+        }
     }
     
     func addOption() {
         guard newOptionContent.isEmpty == false else { return }
         
         withAnimation {
-            let option = Option(content: newOptionContent)
+            let option = Option(content: newOptionContent, order: raffle.options.count)
             raffle.options.append(option)
             newOptionContent = ""
+        }
+    }
+    
+    func shuffle() {
+        withAnimation {
+            var order = 0
+            for optionIndex in raffle.options.indices.shuffled() {
+                raffle.options[optionIndex].order = order
+                raffle.options[optionIndex].flipped = true
+                order += 1
+            }
+        }
+    }
+    
+    func raffleOption() {
+        var delay: TimeInterval = 0
+        for _ in 0..<5 {
+            withAnimation(.linear(duration: 0.3).delay(delay)) {
+                var order = 0
+                for optionIndex in raffle.options.indices.shuffled() {
+                    raffle.options[optionIndex].flipped = true
+                    raffle.options[optionIndex].order = order
+                    order += 1
+                }
+            }
+            delay += 0.25
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(1500))) {
+            withAnimation {
+                let chosenIndex = raffle.options.indices.randomElement()
+                if let chosenIndex {
+                    raffle.options[chosenIndex].flipped = false
+                }
+            }
         }
     }
 }
