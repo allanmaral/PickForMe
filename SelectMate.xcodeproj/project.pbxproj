@@ -11,6 +11,11 @@
 		9DB621002B0ECDA700DCC2B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB620FF2B0ECDA700DCC2B6 /* ContentView.swift */; };
 		9DB621022B0ECDA800DCC2B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB621012B0ECDA800DCC2B6 /* Assets.xcassets */; };
 		9DB621052B0ECDA800DCC2B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB621042B0ECDA800DCC2B6 /* Preview Assets.xcassets */; };
+		9DB6210D2B0ED0C000DCC2B6 /* Raffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6210C2B0ED0C000DCC2B6 /* Raffle.swift */; };
+		9DB6210F2B0ED1EA00DCC2B6 /* EditRaffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6210E2B0ED1EA00DCC2B6 /* EditRaffleView.swift */; };
+		9DB621112B0EE88A00DCC2B6 /* RaffleListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB621102B0EE88A00DCC2B6 /* RaffleListingView.swift */; };
+		9DB621132B0EEEB400DCC2B6 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB621122B0EEEB400DCC2B6 /* Option.swift */; };
+		9DB621152B0EF95700DCC2B6 /* CreateRaffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB621142B0EF95700DCC2B6 /* CreateRaffleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		9DB620FF2B0ECDA700DCC2B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9DB621012B0ECDA800DCC2B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB621042B0ECDA800DCC2B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9DB6210C2B0ED0C000DCC2B6 /* Raffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raffle.swift; sourceTree = "<group>"; };
+		9DB6210E2B0ED1EA00DCC2B6 /* EditRaffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRaffleView.swift; sourceTree = "<group>"; };
+		9DB621102B0EE88A00DCC2B6 /* RaffleListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleListingView.swift; sourceTree = "<group>"; };
+		9DB621122B0EEEB400DCC2B6 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		9DB621142B0EF95700DCC2B6 /* CreateRaffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRaffleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,12 @@
 		9DB620FC2B0ECDA700DCC2B6 /* SelectMate */ = {
 			isa = PBXGroup;
 			children = (
+				9DB6210B2B0ED05F00DCC2B6 /* Model */,
 				9DB620FD2B0ECDA700DCC2B6 /* SelectMateApp.swift */,
+				9DB6210E2B0ED1EA00DCC2B6 /* EditRaffleView.swift */,
+				9DB621142B0EF95700DCC2B6 /* CreateRaffleView.swift */,
 				9DB620FF2B0ECDA700DCC2B6 /* ContentView.swift */,
+				9DB621102B0EE88A00DCC2B6 /* RaffleListingView.swift */,
 				9DB621012B0ECDA800DCC2B6 /* Assets.xcassets */,
 				9DB621032B0ECDA800DCC2B6 /* Preview Content */,
 			);
@@ -65,6 +79,15 @@
 				9DB621042B0ECDA800DCC2B6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9DB6210B2B0ED05F00DCC2B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DB6210C2B0ED0C000DCC2B6 /* Raffle.swift */,
+				9DB621122B0EEEB400DCC2B6 /* Option.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB6210F2B0ED1EA00DCC2B6 /* EditRaffleView.swift in Sources */,
+				9DB6210D2B0ED0C000DCC2B6 /* Raffle.swift in Sources */,
 				9DB621002B0ECDA700DCC2B6 /* ContentView.swift in Sources */,
+				9DB621152B0EF95700DCC2B6 /* CreateRaffleView.swift in Sources */,
 				9DB620FE2B0ECDA700DCC2B6 /* SelectMateApp.swift in Sources */,
+				9DB621132B0EEEB400DCC2B6 /* Option.swift in Sources */,
+				9DB621112B0EE88A00DCC2B6 /* RaffleListingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

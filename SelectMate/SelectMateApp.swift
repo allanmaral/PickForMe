@@ -5,6 +5,7 @@
 //  Created by Allan Amaral on 22/11/23.
 //
 
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,5 +14,6 @@ struct SelectMateApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Raffle.self)
     }
 }
