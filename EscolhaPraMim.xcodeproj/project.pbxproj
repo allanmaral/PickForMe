@@ -7,38 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9DB620FE2B0ECDA700DCC2B6 /* SelectMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB620FD2B0ECDA700DCC2B6 /* SelectMateApp.swift */; };
-		9DB621002B0ECDA700DCC2B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB620FF2B0ECDA700DCC2B6 /* ContentView.swift */; };
-		9DB621022B0ECDA800DCC2B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB621012B0ECDA800DCC2B6 /* Assets.xcassets */; };
-		9DB621052B0ECDA800DCC2B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB621042B0ECDA800DCC2B6 /* Preview Assets.xcassets */; };
-		9DB6210D2B0ED0C000DCC2B6 /* Raffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6210C2B0ED0C000DCC2B6 /* Raffle.swift */; };
-		9DB6210F2B0ED1EA00DCC2B6 /* EditRaffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6210E2B0ED1EA00DCC2B6 /* EditRaffleView.swift */; };
-		9DB621112B0EE88A00DCC2B6 /* RaffleListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB621102B0EE88A00DCC2B6 /* RaffleListingView.swift */; };
-		9DB621132B0EEEB400DCC2B6 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB621122B0EEEB400DCC2B6 /* Option.swift */; };
-		9DB621152B0EF95700DCC2B6 /* CreateRaffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB621142B0EF95700DCC2B6 /* CreateRaffleView.swift */; };
-		9DB621182B103FF900DCC2B6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB621172B103FF900DCC2B6 /* CardView.swift */; };
-		9DB6211B2B10445100DCC2B6 /* Cadify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6211A2B10445100DCC2B6 /* Cadify.swift */; };
-		9DCD12A82B11708D001DD58E /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCD12A72B11708D001DD58E /* Color+Theme.swift */; };
+		9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */; };
+		9DDBBAFD2B1244C000250DBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFC2B1244C000250DBE /* ContentView.swift */; };
+		9DDBBAFF2B1244C100250DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFE2B1244C100250DBE /* Assets.xcassets */; };
+		9DDBBB022B1244C100250DBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBB012B1244C100250DBE /* Preview Assets.xcassets */; };
+		9DDBBB0A2B12453500250DBE /* Raffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB092B12453500250DBE /* Raffle.swift */; };
+		9DDBBB0C2B12455100250DBE /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB0B2B12455100250DBE /* Option.swift */; };
+		9DDBBB0F2B1245C500250DBE /* RaffleListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB0E2B1245C500250DBE /* RaffleListingView.swift */; };
+		9DDBBB112B12460C00250DBE /* RaffleEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */; };
+		9DDBBB132B12464700250DBE /* RaffleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB122B12464700250DBE /* RaffleCreationView.swift */; };
+		9DDBBB162B1246A500250DBE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB152B1246A500250DBE /* CardView.swift */; };
+		9DDBBB192B1247B300250DBE /* Cadify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB182B1247B300250DBE /* Cadify.swift */; };
+		9DDBBB1C2B12481200250DBE /* Gradient+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB1B2B12481200250DBE /* Gradient+Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9DB620FA2B0ECDA700DCC2B6 /* SelectMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelectMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DB620FD2B0ECDA700DCC2B6 /* SelectMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMateApp.swift; sourceTree = "<group>"; };
-		9DB620FF2B0ECDA700DCC2B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9DB621012B0ECDA800DCC2B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9DB621042B0ECDA800DCC2B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9DB6210C2B0ED0C000DCC2B6 /* Raffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raffle.swift; sourceTree = "<group>"; };
-		9DB6210E2B0ED1EA00DCC2B6 /* EditRaffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRaffleView.swift; sourceTree = "<group>"; };
-		9DB621102B0EE88A00DCC2B6 /* RaffleListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleListingView.swift; sourceTree = "<group>"; };
-		9DB621122B0EEEB400DCC2B6 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		9DB621142B0EF95700DCC2B6 /* CreateRaffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRaffleView.swift; sourceTree = "<group>"; };
-		9DB621172B103FF900DCC2B6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		9DB6211A2B10445100DCC2B6 /* Cadify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cadify.swift; sourceTree = "<group>"; };
-		9DCD12A72B11708D001DD58E /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		9DDBBAF72B1244C000250DBE /* EscolhaPraMim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscolhaPraMim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaPraMimApp.swift; sourceTree = "<group>"; };
+		9DDBBAFC2B1244C000250DBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9DDBBAFE2B1244C100250DBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DDBBB012B1244C100250DBE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9DDBBB092B12453500250DBE /* Raffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raffle.swift; sourceTree = "<group>"; };
+		9DDBBB0B2B12455100250DBE /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		9DDBBB0E2B1245C500250DBE /* RaffleListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleListingView.swift; sourceTree = "<group>"; };
+		9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleEditingView.swift; sourceTree = "<group>"; };
+		9DDBBB122B12464700250DBE /* RaffleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleCreationView.swift; sourceTree = "<group>"; };
+		9DDBBB152B1246A500250DBE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9DDBBB182B1247B300250DBE /* Cadify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cadify.swift; sourceTree = "<group>"; };
+		9DDBBB1B2B12481200250DBE /* Gradient+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gradient+Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9DB620F72B0ECDA700DCC2B6 /* Frameworks */ = {
+		9DDBBAF42B1244C000250DBE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,109 +48,125 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9DB620F12B0ECDA700DCC2B6 = {
+		9DDBBAEE2B1244C000250DBE = {
 			isa = PBXGroup;
 			children = (
-				9DB620FC2B0ECDA700DCC2B6 /* SelectMate */,
-				9DB620FB2B0ECDA700DCC2B6 /* Products */,
+				9DDBBAF92B1244C000250DBE /* EscolhaPraMim */,
+				9DDBBAF82B1244C000250DBE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9DB620FB2B0ECDA700DCC2B6 /* Products */ = {
+		9DDBBAF82B1244C000250DBE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DB620FA2B0ECDA700DCC2B6 /* SelectMate.app */,
+				9DDBBAF72B1244C000250DBE /* EscolhaPraMim.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DB620FC2B0ECDA700DCC2B6 /* SelectMate */ = {
+		9DDBBAF92B1244C000250DBE /* EscolhaPraMim */ = {
 			isa = PBXGroup;
 			children = (
-				9DB621192B10444100DCC2B6 /* ViewModifiers */,
-				9DB621162B103A7900DCC2B6 /* Views */,
-				9DB6210B2B0ED05F00DCC2B6 /* Model */,
-				9DB620FD2B0ECDA700DCC2B6 /* SelectMateApp.swift */,
-				9DB6210E2B0ED1EA00DCC2B6 /* EditRaffleView.swift */,
-				9DCD12A72B11708D001DD58E /* Color+Theme.swift */,
-				9DB621142B0EF95700DCC2B6 /* CreateRaffleView.swift */,
-				9DB620FF2B0ECDA700DCC2B6 /* ContentView.swift */,
-				9DB621102B0EE88A00DCC2B6 /* RaffleListingView.swift */,
-				9DB621012B0ECDA800DCC2B6 /* Assets.xcassets */,
-				9DB621032B0ECDA800DCC2B6 /* Preview Content */,
+				9DDBBB082B12450E00250DBE /* Models */,
+				9DDBBB0D2B12457C00250DBE /* Pages */,
+				9DDBBB142B12469200250DBE /* Views */,
+				9DDBBB172B1246CA00250DBE /* ViewModifiers */,
+				9DDBBB1A2B1247EA00250DBE /* Extensions */,
+				9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */,
+				9DDBBAFC2B1244C000250DBE /* ContentView.swift */,
+				9DDBBAFE2B1244C100250DBE /* Assets.xcassets */,
+				9DDBBB002B1244C100250DBE /* Preview Content */,
 			);
-			path = SelectMate;
+			path = EscolhaPraMim;
 			sourceTree = "<group>";
 		};
-		9DB621032B0ECDA800DCC2B6 /* Preview Content */ = {
+		9DDBBB002B1244C100250DBE /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				9DB621042B0ECDA800DCC2B6 /* Preview Assets.xcassets */,
+				9DDBBB012B1244C100250DBE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9DB6210B2B0ED05F00DCC2B6 /* Model */ = {
+		9DDBBB082B12450E00250DBE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9DB6210C2B0ED0C000DCC2B6 /* Raffle.swift */,
-				9DB621122B0EEEB400DCC2B6 /* Option.swift */,
+				9DDBBB092B12453500250DBE /* Raffle.swift */,
+				9DDBBB0B2B12455100250DBE /* Option.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		9DB621162B103A7900DCC2B6 /* Views */ = {
+		9DDBBB0D2B12457C00250DBE /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				9DB621172B103FF900DCC2B6 /* CardView.swift */,
+				9DDBBB0E2B1245C500250DBE /* RaffleListingView.swift */,
+				9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */,
+				9DDBBB122B12464700250DBE /* RaffleCreationView.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		9DDBBB142B12469200250DBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DDBBB152B1246A500250DBE /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9DB621192B10444100DCC2B6 /* ViewModifiers */ = {
+		9DDBBB172B1246CA00250DBE /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				9DB6211A2B10445100DCC2B6 /* Cadify.swift */,
+				9DDBBB182B1247B300250DBE /* Cadify.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		9DDBBB1A2B1247EA00250DBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9DDBBB1B2B12481200250DBE /* Gradient+Theme.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9DB620F92B0ECDA700DCC2B6 /* SelectMate */ = {
+		9DDBBAF62B1244C000250DBE /* EscolhaPraMim */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DB621082B0ECDA800DCC2B6 /* Build configuration list for PBXNativeTarget "SelectMate" */;
+			buildConfigurationList = 9DDBBB052B1244C100250DBE /* Build configuration list for PBXNativeTarget "EscolhaPraMim" */;
 			buildPhases = (
-				9DB620F62B0ECDA700DCC2B6 /* Sources */,
-				9DB620F72B0ECDA700DCC2B6 /* Frameworks */,
-				9DB620F82B0ECDA700DCC2B6 /* Resources */,
+				9DDBBAF32B1244C000250DBE /* Sources */,
+				9DDBBAF42B1244C000250DBE /* Frameworks */,
+				9DDBBAF52B1244C000250DBE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SelectMate;
-			productName = SelectMate;
-			productReference = 9DB620FA2B0ECDA700DCC2B6 /* SelectMate.app */;
+			name = EscolhaPraMim;
+			productName = EscolhaPraMim;
+			productReference = 9DDBBAF72B1244C000250DBE /* EscolhaPraMim.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9DB620F22B0ECDA700DCC2B6 /* Project object */ = {
+		9DDBBAEF2B1244C000250DBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					9DB620F92B0ECDA700DCC2B6 = {
+					9DDBBAF62B1244C000250DBE = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 9DB620F52B0ECDA700DCC2B6 /* Build configuration list for PBXProject "SelectMate" */;
+			buildConfigurationList = 9DDBBAF22B1244C000250DBE /* Build configuration list for PBXProject "EscolhaPraMim" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -158,50 +174,50 @@
 				en,
 				Base,
 			);
-			mainGroup = 9DB620F12B0ECDA700DCC2B6;
-			productRefGroup = 9DB620FB2B0ECDA700DCC2B6 /* Products */;
+			mainGroup = 9DDBBAEE2B1244C000250DBE;
+			productRefGroup = 9DDBBAF82B1244C000250DBE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DB620F92B0ECDA700DCC2B6 /* SelectMate */,
+				9DDBBAF62B1244C000250DBE /* EscolhaPraMim */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9DB620F82B0ECDA700DCC2B6 /* Resources */ = {
+		9DDBBAF52B1244C000250DBE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB621052B0ECDA800DCC2B6 /* Preview Assets.xcassets in Resources */,
-				9DB621022B0ECDA800DCC2B6 /* Assets.xcassets in Resources */,
+				9DDBBB022B1244C100250DBE /* Preview Assets.xcassets in Resources */,
+				9DDBBAFF2B1244C100250DBE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9DB620F62B0ECDA700DCC2B6 /* Sources */ = {
+		9DDBBAF32B1244C000250DBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB6210F2B0ED1EA00DCC2B6 /* EditRaffleView.swift in Sources */,
-				9DB6210D2B0ED0C000DCC2B6 /* Raffle.swift in Sources */,
-				9DB621002B0ECDA700DCC2B6 /* ContentView.swift in Sources */,
-				9DB621152B0EF95700DCC2B6 /* CreateRaffleView.swift in Sources */,
-				9DB620FE2B0ECDA700DCC2B6 /* SelectMateApp.swift in Sources */,
-				9DCD12A82B11708D001DD58E /* Color+Theme.swift in Sources */,
-				9DB621132B0EEEB400DCC2B6 /* Option.swift in Sources */,
-				9DB621182B103FF900DCC2B6 /* CardView.swift in Sources */,
-				9DB621112B0EE88A00DCC2B6 /* RaffleListingView.swift in Sources */,
-				9DB6211B2B10445100DCC2B6 /* Cadify.swift in Sources */,
+				9DDBBB0C2B12455100250DBE /* Option.swift in Sources */,
+				9DDBBB0A2B12453500250DBE /* Raffle.swift in Sources */,
+				9DDBBB132B12464700250DBE /* RaffleCreationView.swift in Sources */,
+				9DDBBAFD2B1244C000250DBE /* ContentView.swift in Sources */,
+				9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */,
+				9DDBBB1C2B12481200250DBE /* Gradient+Theme.swift in Sources */,
+				9DDBBB0F2B1245C500250DBE /* RaffleListingView.swift in Sources */,
+				9DDBBB162B1246A500250DBE /* CardView.swift in Sources */,
+				9DDBBB112B12460C00250DBE /* RaffleEditingView.swift in Sources */,
+				9DDBBB192B1247B300250DBE /* Cadify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9DB621062B0ECDA800DCC2B6 /* Debug */ = {
+		9DDBBB032B1244C100250DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,7 +280,7 @@
 			};
 			name = Debug;
 		};
-		9DB621072B0ECDA800DCC2B6 /* Release */ = {
+		9DDBBB042B1244C100250DBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -320,18 +336,17 @@
 			};
 			name = Release;
 		};
-		9DB621092B0ECDA800DCC2B6 /* Debug */ = {
+		9DDBBB062B1244C100250DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SelectMate/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EscolhaPraMim/Preview Content\"";
 				DEVELOPMENT_TEAM = P54V35B2G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Escolha pra mim";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.SelectMate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.EscolhaPraMim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -350,18 +365,17 @@
 			};
 			name = Debug;
 		};
-		9DB6210A2B0ECDA800DCC2B6 /* Release */ = {
+		9DDBBB072B1244C100250DBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SelectMate/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EscolhaPraMim/Preview Content\"";
 				DEVELOPMENT_TEAM = P54V35B2G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Escolha pra mim";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -372,7 +386,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.SelectMate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.EscolhaPraMim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -383,25 +397,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9DB620F52B0ECDA700DCC2B6 /* Build configuration list for PBXProject "SelectMate" */ = {
+		9DDBBAF22B1244C000250DBE /* Build configuration list for PBXProject "EscolhaPraMim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DB621062B0ECDA800DCC2B6 /* Debug */,
-				9DB621072B0ECDA800DCC2B6 /* Release */,
+				9DDBBB032B1244C100250DBE /* Debug */,
+				9DDBBB042B1244C100250DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DB621082B0ECDA800DCC2B6 /* Build configuration list for PBXNativeTarget "SelectMate" */ = {
+		9DDBBB052B1244C100250DBE /* Build configuration list for PBXNativeTarget "EscolhaPraMim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DB621092B0ECDA800DCC2B6 /* Debug */,
-				9DB6210A2B0ECDA800DCC2B6 /* Release */,
+				9DDBBB062B1244C100250DBE /* Debug */,
+				9DDBBB072B1244C100250DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9DB620F22B0ECDA700DCC2B6 /* Project object */;
+	rootObject = 9DDBBAEF2B1244C000250DBE /* Project object */;
 }

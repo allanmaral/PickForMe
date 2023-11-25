@@ -1,6 +1,6 @@
 //
-//  CreateRaffleView.swift
-//  SelectMate
+//  RaffleCreationView.swift
+//  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
 //
@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct CreateRaffleView: View {
+struct RaffleCreationView: View {
     @State private var title: String = ""
     
     var onCreate: (_ title: String) -> Void
@@ -28,5 +28,5 @@ struct CreateRaffleView: View {
 }
 
 #Preview {
-    CreateRaffleView(onCreate: { _ in })
+    RaffleCreationView(onCreate: { _ in })
 }

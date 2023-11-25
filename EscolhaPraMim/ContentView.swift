@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SelectMate
+//  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
 //
@@ -22,7 +22,7 @@ struct ContentView: View {
             RaffleListingView(searchString: searchText, sort: sortOrder)
                 .navigationTitle("Escolha pra mim!")
                 .navigationDestination(for: Raffle.self) { raffle in
-                    EditRaffleView(raffle: raffle)
+                    RaffleEditingView(raffle: raffle)
                 }
                 .searchable(text: $searchText)
                 .toolbar {
@@ -42,7 +42,7 @@ struct ContentView: View {
                 }
                 .sheet(isPresented: $showCreateRaffle) {
                     NavigationStack {
-                        CreateRaffleView(onCreate: createRaffle)
+                        RaffleCreationView(onCreate: createRaffle)
                     }
                     .presentationDetents([.fraction(0.3)])
                 }

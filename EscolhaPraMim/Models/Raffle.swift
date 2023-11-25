@@ -1,6 +1,6 @@
 //
 //  Raffle.swift
-//  SelectMate
+//  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
 //

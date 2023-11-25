@@ -1,6 +1,6 @@
 //
-//  EditRaffleView.swift
-//  SelectMate
+//  RaffleEditingView.swift
+//  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
 //
@@ -8,18 +8,18 @@
 import SwiftData
 import SwiftUI
 
-struct EditRaffleView: View {
+struct RaffleEditingView: View {
     @Environment(\.dismiss) var dismiss
     @Bindable var raffle: Raffle
     @State private var newOptionContent = ""
     
-//    var modelContext: ModelContext
+    //    var modelContext: ModelContext
     
-//    init(raffleID: PersistentIdentifier, in container: ModelContainer) {
-//        modelContext = ModelContext(container)
-//        modelContext.autosaveEnabled = false
-//        raffle = modelContext.model(for: raffleID) as? Raffle ?? Raffle()
-//    }
+    //    init(raffleID: PersistentIdentifier, in container: ModelContainer) {
+    //        modelContext = ModelContext(container)
+    //        modelContext.autosaveEnabled = false
+    //        raffle = modelContext.model(for: raffleID) as? Raffle ?? Raffle()
+    //    }
     
     let options = [
         "Jurassic Park",
@@ -32,18 +32,18 @@ struct EditRaffleView: View {
         ZStack {
             Color.formBackground.ignoresSafeArea()
             
-            VStack {
-                HStack {
-                    TextField("Nova opção", text: $newOptionContent)
+            ScrollView {
+                VStack {
+                    HStack {
+                        TextField("Nova opção", text: $newOptionContent)
+                        
+                        Button("Adicionar", action: addOption)
+                    }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 12).fill(.inputBackground))
+                    .padding()
                     
-                    Button("Adicionar", action: addOption)
-                }
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 12).fill(.inputBackground))
-                .padding()
-                
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(), GridItem()], content: {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
                         ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
                             CardView(card: Card(content: option.content, flipped: option.flipped))
                                 .aspectRatio(5/6, contentMode: .fit)
@@ -128,9 +128,17 @@ struct EditRaffleView: View {
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Raffle.self, configurations: configuration)
         let modelContext = ModelContext(container)
-        let raffle = Raffle()
+        let raffle = Raffle(
+            "O que assistir?",
+            options: [
+                Option(content: "Jurassic Park", order: 1),
+                Option(content: "Star Wars", flipped: true, order: 2),
+                Option(content: "Blade Runner", flipped: true, order: 3),
+                Option(content: "Terminator", order: 4)
+            ]
+        )
         modelContext.insert(raffle)
-        return EditRaffleView(raffle: raffle)
+        return RaffleEditingView(raffle: raffle)
     } catch {
         fatalError("Failed to create model container.")
     }

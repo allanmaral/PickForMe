@@ -1,6 +1,6 @@
 //
-//  Color+Theme.swift
-//  SelectMate
+//  Gradient+Theme.swift
+//  EscolhaPraMim
 //
 //  Created by Allan Amaral on 24/11/23.
 //
