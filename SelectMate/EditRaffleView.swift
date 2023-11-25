@@ -29,29 +29,34 @@ struct EditRaffleView: View {
     ]
     
     var body: some View {
-        VStack {
-            Form {
-                Section {
-                    HStack {
-                        TextField("Nova opção", text: $newOptionContent)
-                        
-                        Button("Adicionar", action: addOption)
-                    }
+        ZStack {
+            Color.formBackground.ignoresSafeArea()
+            
+            VStack {
+                HStack {
+                    TextField("Nova opção", text: $newOptionContent)
+                    
+                    Button("Adicionar", action: addOption)
                 }
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 12).fill(.inputBackground))
+                .padding()
                 
-                LazyVGrid(columns: [GridItem(), GridItem()], content: {
-                    ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
-                        CardView(card: Card(content: option.content, flipped: option.flipped))
-                            .aspectRatio(3/2, contentMode: .fit)
-                            .onTapGesture {
-                                withAnimation {
-                                    option.flipped.toggle()
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(), GridItem()], content: {
+                        ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
+                            CardView(card: Card(content: option.content, flipped: option.flipped))
+                                .aspectRatio(5/6, contentMode: .fit)
+                                .onTapGesture {
+                                    withAnimation {
+                                        option.flipped.toggle()
+                                    }
                                 }
-                            }
-                    }
-                })
-                .foregroundColor(.orange)
-                
+                        }
+                    })
+                    .foregroundStyle(Gradient.backgroundCard)
+                    .padding()
+                }
             }
         }
         .overlay(alignment: .bottom, content: {
@@ -59,8 +64,9 @@ struct EditRaffleView: View {
                 Button("Escolha para mim!", action: raffleOption)
                     .foregroundColor(.white)
                     .padding()
-                    .background(.orange)
+                    .background(Color.accentColor)
                     .cornerRadius(8)
+                    .padding()
                     .shadow(radius: 16, x: 0, y: 4)
             }
         })

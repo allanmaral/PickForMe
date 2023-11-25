@@ -26,7 +26,7 @@ struct Cardify: ViewModifier, Animatable {
         ZStack {
             shape
                 .strokeBorder(lineWidth: Constants.lineWidth)
-                .background(shape.fill(.white))
+                .background(shape.fill(.cardForeground))
                 .overlay(content)
                 .opacity(flipped ? 0 : 1)
             

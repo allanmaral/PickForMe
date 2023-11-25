@@ -21,7 +21,7 @@ struct CardView: View {
             .minimumScaleFactor(Constants.FontSize.scaleFactor)
             .multilineTextAlignment(.center)
             .aspectRatio(1, contentMode: .fit)
-            .foregroundStyle(.black)
+            .foregroundColor(Color.primary)
             .padding(Constants.inset)
             .cardify(flipped: card.flipped)
     }
