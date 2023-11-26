@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Raffle {
+final class Raffle {
     var title: String
     var raffled: Bool
     var createdAt: Date

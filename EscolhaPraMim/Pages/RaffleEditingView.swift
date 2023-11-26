@@ -11,69 +11,72 @@ import SwiftUI
 struct RaffleEditingView: View {
     @Environment(\.dismiss) var dismiss
     @Bindable var raffle: Raffle
+    
     @State private var newOptionContent = ""
-    
-    //    var modelContext: ModelContext
-    
-    //    init(raffleID: PersistentIdentifier, in container: ModelContainer) {
-    //        modelContext = ModelContext(container)
-    //        modelContext.autosaveEnabled = false
-    //        raffle = modelContext.model(for: raffleID) as? Raffle ?? Raffle()
-    //    }
-    
-    let options = [
-        "Jurassic Park",
-        "Sei lá",
-        "The Office",
-        "Community"
-    ]
+    @FocusState private var isNewOptionFocused
     
     var body: some View {
         ZStack {
             Color.formBackground.ignoresSafeArea()
-            
             ScrollView {
-                VStack {
-                    HStack {
-                        TextField("Nova opção", text: $newOptionContent)
-                        
-                        Button("Adicionar", action: addOption)
-                    }
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 12).fill(.inputBackground))
-                    .padding()
-                    
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
-                        ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
-                            CardView(card: Card(content: option.content, flipped: option.flipped))
-                                .aspectRatio(5/6, contentMode: .fit)
-                                .onTapGesture {
-                                    withAnimation {
-                                        option.flipped.toggle()
-                                    }
-                                }
-                        }
-                    })
-                    .foregroundStyle(Gradient.backgroundCard)
-                    .padding()
-                }
+                newOptionInput.padding()
+                optionsGrid.padding()
             }
         }
-        .overlay(alignment: .bottom, content: {
-            if raffle.options.count >= 2 {
-                Button("Escolha para mim!", action: raffleOption)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.accentColor)
-                    .cornerRadius(8)
-                    .padding()
-                    .shadow(radius: 16, x: 0, y: 4)
-            }
-        })
+        .onTapGesture(perform: endEditing)
+        .overlay(alignment: .bottom, content: { chooseForMeButton })
         .navigationTitle(raffle.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button("Shuffle", systemImage: "shuffle", action: shuffle)
+        }
+    }
+    
+    var newOptionInput: some View {
+        HStack {
+            TextField("Nova opção", text: $newOptionContent)
+                .submitLabel(.done)
+                .focused($isNewOptionFocused)
+                .onSubmit(addOption)
+            
+            Button("Adicionar", action: addOption)
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 12).fill(.inputBackground))
+    }
+    
+    var optionsGrid: some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
+            ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
+                CardView(card: Card(content: option.content, flipped: option.flipped))
+                    .aspectRatio(5/6, contentMode: .fit)
+                    .onTapGesture { flip(option) }
+            }
+        })
+        .foregroundStyle(Gradient.backgroundCard)
+    }
+    
+    @ViewBuilder
+    var chooseForMeButton: some View {
+        if raffle.options.count >= 2 {
+            Button("Escolha para mim!", action: raffleOption)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.accentColor)
+                .cornerRadius(8)
+                .padding()
+                .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
+        }
+    }
+    
+    func endEditing() {
+        isNewOptionFocused = false
+    }
+    
+    func flip(_ option: Option) {
+        endEditing()
+        withAnimation {
+            option.flipped.toggle()
         }
     }
     

@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Option {
+final class Option {
     var content: String
     var flipped: Bool
     var order: Int
