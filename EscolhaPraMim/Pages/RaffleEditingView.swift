@@ -12,6 +12,7 @@ struct RaffleEditingView: View {
     @Environment(\.dismiss) var dismiss
     @Bindable var raffle: Raffle
     
+    @State private var deletingOptions = false
     @State private var newOptionContent = ""
     @FocusState private var isNewOptionFocused
     
@@ -50,7 +51,23 @@ struct RaffleEditingView: View {
             ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
                 CardView(card: Card(content: option.content, flipped: option.flipped))
                     .aspectRatio(5/6, contentMode: .fit)
+                    .shake(isShaking: deletingOptions)
+                    .overlay(alignment: .topLeading, content: {
+                        if deletingOptions {
+                            Image(systemName: "minus")
+                                .fontWeight(.bold)
+                                .foregroundStyle(Color.black)
+                                .frame(width: 32, height: 32)
+                                .background(Circle().fill(.gray))
+                                .frame(width: 44, height: 44)
+                                .offset(x: -16, y: -16)
+                                .onTapGesture {
+                                    remove(option)
+                                }
+                        }
+                    })
                     .onTapGesture { flip(option) }
+                    .onLongPressGesture(perform: enterDeletionMode)
             }
         })
         .foregroundStyle(Gradient.backgroundCard)
@@ -71,6 +88,7 @@ struct RaffleEditingView: View {
     
     func endEditing() {
         isNewOptionFocused = false
+        deletingOptions = false
     }
     
     func flip(_ option: Option) {
@@ -78,6 +96,16 @@ struct RaffleEditingView: View {
         withAnimation {
             option.flipped.toggle()
         }
+    }
+    
+    func remove(_ option: Option) {
+        withAnimation {
+            raffle.options = raffle.options.filter { $0.id != option.id }
+        }
+    }
+    
+    func enterDeletionMode() {
+        deletingOptions = true
     }
     
     func addOption() {
@@ -91,6 +119,8 @@ struct RaffleEditingView: View {
     }
     
     func shuffle() {
+        endEditing()
+        
         withAnimation {
             var order = 0
             for optionIndex in raffle.options.indices.shuffled() {
@@ -102,6 +132,8 @@ struct RaffleEditingView: View {
     }
     
     func raffleOption() {
+        endEditing()
+        
         var delay: TimeInterval = 0
         for _ in 0..<5 {
             withAnimation(.linear(duration: 0.3).delay(delay)) {

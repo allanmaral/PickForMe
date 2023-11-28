@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DA4246A2B156CD700378846 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA424692B156CD700378846 /* Shake.swift */; };
 		9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */; };
 		9DDBBAFD2B1244C000250DBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFC2B1244C000250DBE /* ContentView.swift */; };
 		9DDBBAFF2B1244C100250DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFE2B1244C100250DBE /* Assets.xcassets */; };
@@ -17,11 +18,12 @@
 		9DDBBB112B12460C00250DBE /* RaffleEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */; };
 		9DDBBB132B12464700250DBE /* RaffleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB122B12464700250DBE /* RaffleCreationView.swift */; };
 		9DDBBB162B1246A500250DBE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB152B1246A500250DBE /* CardView.swift */; };
-		9DDBBB192B1247B300250DBE /* Cadify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB182B1247B300250DBE /* Cadify.swift */; };
+		9DDBBB192B1247B300250DBE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB182B1247B300250DBE /* Cardify.swift */; };
 		9DDBBB1C2B12481200250DBE /* Gradient+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB1B2B12481200250DBE /* Gradient+Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9DA424692B156CD700378846 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		9DDBBAF72B1244C000250DBE /* EscolhaPraMim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscolhaPraMim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaPraMimApp.swift; sourceTree = "<group>"; };
 		9DDBBAFC2B1244C000250DBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,7 +35,7 @@
 		9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleEditingView.swift; sourceTree = "<group>"; };
 		9DDBBB122B12464700250DBE /* RaffleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleCreationView.swift; sourceTree = "<group>"; };
 		9DDBBB152B1246A500250DBE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		9DDBBB182B1247B300250DBE /* Cadify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cadify.swift; sourceTree = "<group>"; };
+		9DDBBB182B1247B300250DBE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		9DDBBB1B2B12481200250DBE /* Gradient+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gradient+Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +120,8 @@
 		9DDBBB172B1246CA00250DBE /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				9DDBBB182B1247B300250DBE /* Cadify.swift */,
+				9DDBBB182B1247B300250DBE /* Cardify.swift */,
+				9DA424692B156CD700378846 /* Shake.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -204,13 +207,14 @@
 				9DDBBB0C2B12455100250DBE /* Option.swift in Sources */,
 				9DDBBB0A2B12453500250DBE /* Raffle.swift in Sources */,
 				9DDBBB132B12464700250DBE /* RaffleCreationView.swift in Sources */,
+				9DA4246A2B156CD700378846 /* Shake.swift in Sources */,
 				9DDBBAFD2B1244C000250DBE /* ContentView.swift in Sources */,
 				9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */,
 				9DDBBB1C2B12481200250DBE /* Gradient+Theme.swift in Sources */,
 				9DDBBB0F2B1245C500250DBE /* RaffleListingView.swift in Sources */,
 				9DDBBB162B1246A500250DBE /* CardView.swift in Sources */,
 				9DDBBB112B12460C00250DBE /* RaffleEditingView.swift in Sources */,
-				9DDBBB192B1247B300250DBE /* Cadify.swift in Sources */,
+				9DDBBB192B1247B300250DBE /* Cardify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
