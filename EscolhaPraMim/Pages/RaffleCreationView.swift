@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct RaffleCreationView: View {
+    @Environment(\.dismiss) private var onDismiss
     @State private var title: String = ""
     
     var onCreate: (_ title: String) -> Void
@@ -16,17 +17,39 @@ struct RaffleCreationView: View {
     var body: some View {
         Form {
             TextField("Name", text: $title)
-            Button("Create", action: create)
+                .submitLabel(.done)
+                .onSubmit(create)
         }
+        .toolbar(content: {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancelar", action: dismiss)
+            }
+            
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Criar", action: create)
+                    .disabled(title.isEmpty)
+            }
+        })
         .navigationTitle("Novo sorteio")
         .navigationBarTitleDisplayMode(.inline)
     }
     
     func create() {
+        guard !title.isEmpty else { return }
         onCreate(title)
+    }
+    
+    func dismiss() {
+        onDismiss()
     }
 }
 
 #Preview {
-    RaffleCreationView(onCreate: { _ in })
+    Text("Sample")
+        .sheet(isPresented: .constant(true)) {
+            NavigationStack {
+                RaffleCreationView() { _ in }
+            }
+            .presentationDetents([.fraction(0.2)])
+        }
 }

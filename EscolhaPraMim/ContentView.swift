@@ -44,7 +44,7 @@ struct ContentView: View {
                     NavigationStack {
                         RaffleCreationView(onCreate: createRaffle)
                     }
-                    .presentationDetents([.fraction(0.3)])
+                    .presentationDetents([.fraction(0.2)])
                 }
             
         }
