@@ -12,10 +12,10 @@ extension Raffle {
         let raffle1 = Raffle(
             "O que assistir?",
             options: [
-                Option(content: "Jurassic Park", order: 1),
-                Option(content: "Star Wars", flipped: true, order: 2),
-                Option(content: "Blade Runner", flipped: true, order: 3),
-                Option(content: "Terminator", order: 4)
+                RaffleOption(content: "Jurassic Park", order: 1),
+                RaffleOption(content: "Star Wars", flipped: true, order: 2),
+                RaffleOption(content: "Blade Runner", flipped: true, order: 3),
+                RaffleOption(content: "Terminator", order: 4)
             ]
         )
         modelContext.insert(raffle1)

@@ -16,15 +16,7 @@ struct RaffleListingView: View {
     var body: some View {
         List {
             ForEach(raffles) { raffle in
-                NavigationLink(value: raffle) {
-                    VStack(alignment: .leading) {
-                        Text(raffle.title)
-                            .font(.headline)
-                        
-                        Text(raffle.createdAt.formatted(.relative(presentation: .named)))
-                            .font(.callout)
-                    }
-                }
+                RaffleListItem(raffle)
             }
             .onDelete(perform: deleteRaffles)
         }
@@ -49,6 +41,8 @@ struct RaffleListingView: View {
 }
 
 #Preview {
-    RaffleListingView(searchString: "", sort: SortDescriptor(\Raffle.title))
-        .mockRaffleDataContainer()
+    NavigationStack {
+        RaffleListingView(searchString: "", sort: SortDescriptor(\Raffle.title))
+    }
+    .mockRaffleDataContainer()
 }

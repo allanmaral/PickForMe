@@ -1,5 +1,5 @@
 //
-//  RaffleEditingView.swift
+//  RaffleDetailView.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct RaffleEditingView: View {
+struct RaffleDetailView: View {
     @Environment(\.dismiss) var dismiss
     @Bindable var raffle: Raffle
     
@@ -91,14 +91,14 @@ struct RaffleEditingView: View {
         deletingOptions = false
     }
     
-    func flip(_ option: Option) {
+    func flip(_ option: RaffleOption) {
         endEditing()
         withAnimation {
             option.flipped.toggle()
         }
     }
     
-    func remove(_ option: Option) {
+    func remove(_ option: RaffleOption) {
         withAnimation {
             raffle.options = raffle.options.filter { $0.id != option.id }
         }
@@ -112,7 +112,7 @@ struct RaffleEditingView: View {
         guard newOptionContent.isEmpty == false else { return }
         
         withAnimation {
-            let option = Option(content: newOptionContent, order: raffle.options.count)
+            let option = RaffleOption(content: newOptionContent, order: raffle.options.count)
             raffle.options.append(option)
             newOptionContent = ""
         }
@@ -160,6 +160,6 @@ struct RaffleEditingView: View {
 
 #Preview {
     ModelPreview { raffle in
-        RaffleEditingView(raffle: raffle)
+        RaffleDetailView(raffle: raffle)
     }
 }

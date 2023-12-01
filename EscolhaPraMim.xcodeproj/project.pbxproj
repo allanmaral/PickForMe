@@ -14,14 +14,16 @@
 		9DB042A22B196FCC00D1A531 /* RaffleMockDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042A12B196FCB00D1A531 /* RaffleMockDataContainer.swift */; };
 		9DB042A42B19701E00D1A531 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042A32B19701E00D1A531 /* DataGeneration.swift */; };
 		9DB042A62B1970D200D1A531 /* Raffle+DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042A52B1970D200D1A531 /* Raffle+DataGeneration.swift */; };
+		9DB042AB2B19871C00D1A531 /* RaffleNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042AA2B19871C00D1A531 /* RaffleNavigationStack.swift */; };
+		9DB042AE2B198B5000D1A531 /* RaffleListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042AD2B198B5000D1A531 /* RaffleListItem.swift */; };
 		9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */; };
 		9DDBBAFD2B1244C000250DBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFC2B1244C000250DBE /* ContentView.swift */; };
 		9DDBBAFF2B1244C100250DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFE2B1244C100250DBE /* Assets.xcassets */; };
 		9DDBBB022B1244C100250DBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBB012B1244C100250DBE /* Preview Assets.xcassets */; };
 		9DDBBB0A2B12453500250DBE /* Raffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB092B12453500250DBE /* Raffle.swift */; };
-		9DDBBB0C2B12455100250DBE /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB0B2B12455100250DBE /* Option.swift */; };
+		9DDBBB0C2B12455100250DBE /* RaffleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB0B2B12455100250DBE /* RaffleOption.swift */; };
 		9DDBBB0F2B1245C500250DBE /* RaffleListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB0E2B1245C500250DBE /* RaffleListingView.swift */; };
-		9DDBBB112B12460C00250DBE /* RaffleEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */; };
+		9DDBBB112B12460C00250DBE /* RaffleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB102B12460C00250DBE /* RaffleDetailView.swift */; };
 		9DDBBB132B12464700250DBE /* RaffleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB122B12464700250DBE /* RaffleCreationView.swift */; };
 		9DDBBB162B1246A500250DBE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB152B1246A500250DBE /* CardView.swift */; };
 		9DDBBB192B1247B300250DBE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBB182B1247B300250DBE /* Cardify.swift */; };
@@ -36,15 +38,17 @@
 		9DB042A12B196FCB00D1A531 /* RaffleMockDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleMockDataContainer.swift; sourceTree = "<group>"; };
 		9DB042A32B19701E00D1A531 /* DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
 		9DB042A52B1970D200D1A531 /* Raffle+DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Raffle+DataGeneration.swift"; sourceTree = "<group>"; };
+		9DB042AA2B19871C00D1A531 /* RaffleNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleNavigationStack.swift; sourceTree = "<group>"; };
+		9DB042AD2B198B5000D1A531 /* RaffleListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleListItem.swift; sourceTree = "<group>"; };
 		9DDBBAF72B1244C000250DBE /* EscolhaPraMim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscolhaPraMim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaPraMimApp.swift; sourceTree = "<group>"; };
 		9DDBBAFC2B1244C000250DBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9DDBBAFE2B1244C100250DBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DDBBB012B1244C100250DBE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9DDBBB092B12453500250DBE /* Raffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raffle.swift; sourceTree = "<group>"; };
-		9DDBBB0B2B12455100250DBE /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		9DDBBB0B2B12455100250DBE /* RaffleOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleOption.swift; sourceTree = "<group>"; };
 		9DDBBB0E2B1245C500250DBE /* RaffleListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleListingView.swift; sourceTree = "<group>"; };
-		9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleEditingView.swift; sourceTree = "<group>"; };
+		9DDBBB102B12460C00250DBE /* RaffleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleDetailView.swift; sourceTree = "<group>"; };
 		9DDBBB122B12464700250DBE /* RaffleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleCreationView.swift; sourceTree = "<group>"; };
 		9DDBBB152B1246A500250DBE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9DDBBB182B1247B300250DBE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
@@ -65,13 +69,53 @@
 		9DB0429A2B195AAF00D1A531 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9DB042A82B19856700D1A531 /* General */,
+				9DDBBB082B12450E00250DBE /* Raffle */,
+				9DB042AC2B198A0000D1A531 /* Navigation */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9DB042A82B19856700D1A531 /* General */ = {
+			isa = PBXGroup;
+			children = (
 				9DB0429B2B195AC700D1A531 /* RaffleDataContainer.swift */,
 				9DB042A12B196FCB00D1A531 /* RaffleMockDataContainer.swift */,
 				9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */,
 				9DB042A32B19701E00D1A531 /* DataGeneration.swift */,
 				9DB0429F2B19682F00D1A531 /* ModelPreview.swift */,
 			);
-			path = Data;
+			path = General;
+			sourceTree = "<group>";
+		};
+		9DB042AC2B198A0000D1A531 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		9DB042AF2B198DB500D1A531 /* Raffle */ = {
+			isa = PBXGroup;
+			children = (
+				9DB042AA2B19871C00D1A531 /* RaffleNavigationStack.swift */,
+				9DDBBB0E2B1245C500250DBE /* RaffleListingView.swift */,
+				9DDBBB102B12460C00250DBE /* RaffleDetailView.swift */,
+				9DDBBB122B12464700250DBE /* RaffleCreationView.swift */,
+				9DB042AD2B198B5000D1A531 /* RaffleListItem.swift */,
+			);
+			path = Raffle;
+			sourceTree = "<group>";
+		};
+		9DB042B02B198DC500D1A531 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9DDBBB152B1246A500250DBE /* CardView.swift */,
+				9DDBBB182B1247B300250DBE /* Cardify.swift */,
+				9DA424692B156CD700378846 /* Shake.swift */,
+				9DDBBB1B2B12481200250DBE /* Gradient+Theme.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		9DDBBAEE2B1244C000250DBE = {
@@ -93,14 +137,10 @@
 		9DDBBAF92B1244C000250DBE /* EscolhaPraMim */ = {
 			isa = PBXGroup;
 			children = (
-				9DB0429A2B195AAF00D1A531 /* Data */,
-				9DDBBB082B12450E00250DBE /* Models */,
-				9DDBBB0D2B12457C00250DBE /* Pages */,
-				9DDBBB142B12469200250DBE /* Views */,
-				9DDBBB172B1246CA00250DBE /* ViewModifiers */,
-				9DDBBB1A2B1247EA00250DBE /* Extensions */,
 				9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */,
 				9DDBBAFC2B1244C000250DBE /* ContentView.swift */,
+				9DB0429A2B195AAF00D1A531 /* Data */,
+				9DDBBB0D2B12457C00250DBE /* UI */,
 				9DDBBAFE2B1244C100250DBE /* Assets.xcassets */,
 				9DDBBB002B1244C100250DBE /* Preview Content */,
 			);
@@ -115,49 +155,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9DDBBB082B12450E00250DBE /* Models */ = {
+		9DDBBB082B12450E00250DBE /* Raffle */ = {
 			isa = PBXGroup;
 			children = (
 				9DDBBB092B12453500250DBE /* Raffle.swift */,
-				9DDBBB0B2B12455100250DBE /* Option.swift */,
+				9DDBBB0B2B12455100250DBE /* RaffleOption.swift */,
 				9DB042A52B1970D200D1A531 /* Raffle+DataGeneration.swift */,
 			);
-			path = Models;
+			path = Raffle;
 			sourceTree = "<group>";
 		};
-		9DDBBB0D2B12457C00250DBE /* Pages */ = {
+		9DDBBB0D2B12457C00250DBE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9DDBBB0E2B1245C500250DBE /* RaffleListingView.swift */,
-				9DDBBB102B12460C00250DBE /* RaffleEditingView.swift */,
-				9DDBBB122B12464700250DBE /* RaffleCreationView.swift */,
+				9DB042B02B198DC500D1A531 /* General */,
+				9DB042AF2B198DB500D1A531 /* Raffle */,
 			);
-			path = Pages;
-			sourceTree = "<group>";
-		};
-		9DDBBB142B12469200250DBE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9DDBBB152B1246A500250DBE /* CardView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9DDBBB172B1246CA00250DBE /* ViewModifiers */ = {
-			isa = PBXGroup;
-			children = (
-				9DDBBB182B1247B300250DBE /* Cardify.swift */,
-				9DA424692B156CD700378846 /* Shake.swift */,
-			);
-			path = ViewModifiers;
-			sourceTree = "<group>";
-		};
-		9DDBBB1A2B1247EA00250DBE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9DDBBB1B2B12481200250DBE /* Gradient+Theme.swift */,
-			);
-			path = Extensions;
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DDBBB0C2B12455100250DBE /* Option.swift in Sources */,
+				9DDBBB0C2B12455100250DBE /* RaffleOption.swift in Sources */,
 				9DB042A62B1970D200D1A531 /* Raffle+DataGeneration.swift in Sources */,
 				9DDBBB0A2B12453500250DBE /* Raffle.swift in Sources */,
 				9DB042A22B196FCC00D1A531 /* RaffleMockDataContainer.swift in Sources */,
@@ -244,8 +258,10 @@
 				9DDBBB1C2B12481200250DBE /* Gradient+Theme.swift in Sources */,
 				9DDBBB0F2B1245C500250DBE /* RaffleListingView.swift in Sources */,
 				9DB042A02B19682F00D1A531 /* ModelPreview.swift in Sources */,
+				9DB042AE2B198B5000D1A531 /* RaffleListItem.swift in Sources */,
+				9DB042AB2B19871C00D1A531 /* RaffleNavigationStack.swift in Sources */,
 				9DDBBB162B1246A500250DBE /* CardView.swift in Sources */,
-				9DDBBB112B12460C00250DBE /* RaffleEditingView.swift in Sources */,
+				9DDBBB112B12460C00250DBE /* RaffleDetailView.swift in Sources */,
 				9DDBBB192B1247B300250DBE /* Cardify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

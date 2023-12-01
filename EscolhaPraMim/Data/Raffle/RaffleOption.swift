@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Option {
+final class RaffleOption {
     var content: String
     var flipped: Bool
     var order: Int

@@ -15,9 +15,9 @@ final class Raffle {
     var createdAt: Date
 
     @Relationship(deleteRule: .cascade)
-    var options: [Option]
+    var options: [RaffleOption]
     
-    init(_ title: String = "", raffled: Bool = false, options: [Option] = [], createdAt: Date = .now) {
+    init(_ title: String = "", raffled: Bool = false, options: [RaffleOption] = [], createdAt: Date = .now) {
         self.title = title
         self.raffled = raffled
         self.options = options

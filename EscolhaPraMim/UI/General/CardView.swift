@@ -27,7 +27,7 @@ struct CardView: View {
     }
     
     private enum Constants {
-        static let inset: CGFloat = 4
+        static let inset: CGFloat = 8
         
         enum FontSize {
             static let largest: CGFloat = 18
