@@ -159,22 +159,7 @@ struct RaffleEditingView: View {
 }
 
 #Preview {
-    do {
-        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Raffle.self, configurations: configuration)
-        let modelContext = ModelContext(container)
-        let raffle = Raffle(
-            "O que assistir?",
-            options: [
-                Option(content: "Jurassic Park", order: 1),
-                Option(content: "Star Wars", flipped: true, order: 2),
-                Option(content: "Blade Runner", flipped: true, order: 3),
-                Option(content: "Terminator", order: 4)
-            ]
-        )
-        modelContext.insert(raffle)
-        return RaffleEditingView(raffle: raffle)
-    } catch {
-        fatalError("Failed to create model container.")
+    ModelPreview { raffle in
+        RaffleEditingView(raffle: raffle)
     }
 }

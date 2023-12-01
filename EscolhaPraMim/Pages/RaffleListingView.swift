@@ -50,5 +50,5 @@ struct RaffleListingView: View {
 
 #Preview {
     RaffleListingView(searchString: "", sort: SortDescriptor(\Raffle.title))
-        .modelContainer(for: Raffle.self)
+        .mockRaffleDataContainer()
 }

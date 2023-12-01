@@ -66,5 +66,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Raffle.self)
+        .raffleDataContainer(inMemory: false)
 }

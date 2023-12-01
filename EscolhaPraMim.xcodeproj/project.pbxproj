@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9DA4246A2B156CD700378846 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA424692B156CD700378846 /* Shake.swift */; };
+		9DB0429C2B195AC700D1A531 /* RaffleDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0429B2B195AC700D1A531 /* RaffleDataContainer.swift */; };
+		9DB0429E2B1961F800D1A531 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */; };
+		9DB042A02B19682F00D1A531 /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0429F2B19682F00D1A531 /* ModelPreview.swift */; };
+		9DB042A22B196FCC00D1A531 /* RaffleMockDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042A12B196FCB00D1A531 /* RaffleMockDataContainer.swift */; };
+		9DB042A42B19701E00D1A531 /* DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042A32B19701E00D1A531 /* DataGeneration.swift */; };
+		9DB042A62B1970D200D1A531 /* Raffle+DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042A52B1970D200D1A531 /* Raffle+DataGeneration.swift */; };
 		9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */; };
 		9DDBBAFD2B1244C000250DBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFC2B1244C000250DBE /* ContentView.swift */; };
 		9DDBBAFF2B1244C100250DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFE2B1244C100250DBE /* Assets.xcassets */; };
@@ -24,6 +30,12 @@
 
 /* Begin PBXFileReference section */
 		9DA424692B156CD700378846 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		9DB0429B2B195AC700D1A531 /* RaffleDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleDataContainer.swift; sourceTree = "<group>"; };
+		9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerationOptions.swift; sourceTree = "<group>"; };
+		9DB0429F2B19682F00D1A531 /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
+		9DB042A12B196FCB00D1A531 /* RaffleMockDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleMockDataContainer.swift; sourceTree = "<group>"; };
+		9DB042A32B19701E00D1A531 /* DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGeneration.swift; sourceTree = "<group>"; };
+		9DB042A52B1970D200D1A531 /* Raffle+DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Raffle+DataGeneration.swift"; sourceTree = "<group>"; };
 		9DDBBAF72B1244C000250DBE /* EscolhaPraMim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscolhaPraMim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolhaPraMimApp.swift; sourceTree = "<group>"; };
 		9DDBBAFC2B1244C000250DBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +62,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DB0429A2B195AAF00D1A531 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9DB0429B2B195AC700D1A531 /* RaffleDataContainer.swift */,
+				9DB042A12B196FCB00D1A531 /* RaffleMockDataContainer.swift */,
+				9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */,
+				9DB042A32B19701E00D1A531 /* DataGeneration.swift */,
+				9DB0429F2B19682F00D1A531 /* ModelPreview.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9DDBBAEE2B1244C000250DBE = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +93,7 @@
 		9DDBBAF92B1244C000250DBE /* EscolhaPraMim */ = {
 			isa = PBXGroup;
 			children = (
+				9DB0429A2B195AAF00D1A531 /* Data */,
 				9DDBBB082B12450E00250DBE /* Models */,
 				9DDBBB0D2B12457C00250DBE /* Pages */,
 				9DDBBB142B12469200250DBE /* Views */,
@@ -95,6 +120,7 @@
 			children = (
 				9DDBBB092B12453500250DBE /* Raffle.swift */,
 				9DDBBB0B2B12455100250DBE /* Option.swift */,
+				9DB042A52B1970D200D1A531 /* Raffle+DataGeneration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,13 +231,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DDBBB0C2B12455100250DBE /* Option.swift in Sources */,
+				9DB042A62B1970D200D1A531 /* Raffle+DataGeneration.swift in Sources */,
 				9DDBBB0A2B12453500250DBE /* Raffle.swift in Sources */,
+				9DB042A22B196FCC00D1A531 /* RaffleMockDataContainer.swift in Sources */,
 				9DDBBB132B12464700250DBE /* RaffleCreationView.swift in Sources */,
 				9DA4246A2B156CD700378846 /* Shake.swift in Sources */,
+				9DB042A42B19701E00D1A531 /* DataGeneration.swift in Sources */,
+				9DB0429C2B195AC700D1A531 /* RaffleDataContainer.swift in Sources */,
+				9DB0429E2B1961F800D1A531 /* DataGenerationOptions.swift in Sources */,
 				9DDBBAFD2B1244C000250DBE /* ContentView.swift in Sources */,
 				9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */,
 				9DDBBB1C2B12481200250DBE /* Gradient+Theme.swift in Sources */,
 				9DDBBB0F2B1245C500250DBE /* RaffleListingView.swift in Sources */,
+				9DB042A02B19682F00D1A531 /* ModelPreview.swift in Sources */,
 				9DDBBB162B1246A500250DBE /* CardView.swift in Sources */,
 				9DDBBB112B12460C00250DBE /* RaffleEditingView.swift in Sources */,
 				9DDBBB192B1247B300250DBE /* Cardify.swift in Sources */,

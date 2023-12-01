@@ -13,7 +13,7 @@ struct EscolhaPraMimApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .raffleDataContainer(inMemory: false)
         }
-        .modelContainer(for: Raffle.self)
     }
 }
