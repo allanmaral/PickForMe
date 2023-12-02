@@ -37,7 +37,7 @@ struct RaffleNavigationStack: View {
     @ViewBuilder
     var toolbar: some View {
         sortPicker
-        Button("Criar sorteio", systemImage: "plus", action: showCreationForm)
+        Button("Nova escolha", systemImage: "plus", action: showCreationForm)
     }
     
     var sortPicker: some View {

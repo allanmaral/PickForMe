@@ -12,9 +12,9 @@ struct RaffleDetailView: View {
     @Environment(\.dismiss) var dismiss
     @Bindable var raffle: Raffle
     
-    @State private var deletingOptions = false
     @State private var newOptionContent = ""
     @FocusState private var isNewOptionFocused
+    @State private var pickTimer: Timer?
     
     var body: some View {
         ZStack {
@@ -49,16 +49,16 @@ struct RaffleDetailView: View {
     var optionsGrid: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
             ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
-                CardView(card: Card(content: option.content, flipped: option.flipped))
+                CardView(card: Card(content: option.content, flipped: deletingAnimationState != .notAppeared ? false : option.flipped))
                     .aspectRatio(5/6, contentMode: .fit)
-                    .shake(isShaking: deletingOptions)
                     .overlay(alignment: .topLeading, content: {
-                        if deletingOptions {
+                        if deletingAnimationState != .notAppeared {
                             Image(systemName: "minus")
                                 .fontWeight(.bold)
                                 .foregroundStyle(Color.black)
                                 .frame(width: 32, height: 32)
                                 .background(Circle().fill(.gray))
+                                .transition(.scale(scale: 0.0, anchor: UnitPoint(x: 0.1, y: 0.1)))
                                 .frame(width: 44, height: 44)
                                 .offset(x: -16, y: -16)
                                 .onTapGesture {
@@ -66,8 +66,10 @@ struct RaffleDetailView: View {
                                 }
                         }
                     })
+                    .shake(isShaking: deletingAnimationState == .shaking)
                     .onTapGesture { flip(option) }
                     .onLongPressGesture(perform: enterDeletionMode)
+                
             }
         })
         .foregroundStyle(Gradient.backgroundCard)
@@ -88,7 +90,7 @@ struct RaffleDetailView: View {
     
     func endEditing() {
         isNewOptionFocused = false
-        deletingOptions = false
+        deletingAnimationState = .notAppeared
     }
     
     func flip(_ option: RaffleOption) {
@@ -102,10 +104,6 @@ struct RaffleDetailView: View {
         withAnimation {
             raffle.options = raffle.options.filter { $0.id != option.id }
         }
-    }
-    
-    func enterDeletionMode() {
-        deletingOptions = true
     }
     
     func addOption() {
@@ -148,16 +146,36 @@ struct RaffleDetailView: View {
             delay += 0.25
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(1500))) {
+        pickTimer?.invalidate()
+        pickTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
             withAnimation {
                 let chosenIndex = raffle.options.indices.randomElement()
-                if let chosenIndex {
-                    raffle.options[chosenIndex].flipped = false
-                    raffle.updatedAt = .now
+                for optionIndex in raffle.options.indices {
+                    raffle.options[optionIndex].flipped = optionIndex != chosenIndex
                 }
+                raffle.updatedAt = .now
             }
         }
     }
+    
+    enum DeletingAnimationState {
+        case notAppeared, appeared, shaking
+    }
+    
+    @State var deletingAnimationState: DeletingAnimationState = .notAppeared
+    
+    func enterDeletionMode() {
+        let delay = 0.3
+        withAnimation(.easeInOut(duration: delay)) {
+            deletingAnimationState = .appeared
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            withAnimation (.easeInOut.repeatForever()) {
+                deletingAnimationState = .shaking
+            }
+        }
+    }
+    
 }
 
 #Preview {

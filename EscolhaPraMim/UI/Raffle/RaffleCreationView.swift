@@ -17,7 +17,7 @@ struct RaffleCreationView: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text: $title)
+                TextField("Nome", text: $title)
                     .submitLabel(.done)
                     .onSubmit(create)
             }
@@ -31,7 +31,7 @@ struct RaffleCreationView: View {
                         .disabled(title.isEmpty)
                 }
             })
-            .navigationTitle("Novo sorteio")
+            .navigationTitle("Nova escolha")
             .navigationBarTitleDisplayMode(.inline)
         }
         .presentationDetents([.fraction(0.2)])

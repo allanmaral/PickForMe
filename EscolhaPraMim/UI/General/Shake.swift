@@ -80,10 +80,12 @@ extension View {
     func shake(isShaking: Bool, bounceAmount: CGFloat = 1, rotationAmount: CGFloat = 3) -> some View {
         let rotationAnimation = isShaking ? Shake.Animation.rotate : .default
         let bounceAnimation = isShaking ? Shake.Animation.bounce : .default
-        return self
-            .modifier(Shake.RotationEffect(isShaking, rotationAmount: rotationAmount))
-            .animation(rotationAnimation, value: isShaking)
-            .modifier(Shake.BounceEffect(isShaking, bounceAmount: bounceAmount))
-            .animation(bounceAnimation, value: isShaking)
+        return TimelineView(.animation) { timeline in
+            self
+                .modifier(Shake.RotationEffect(isShaking, rotationAmount: rotationAmount))
+                .animation(rotationAnimation, value: isShaking)
+                .modifier(Shake.BounceEffect(isShaking, bounceAmount: bounceAmount))
+                .animation(bounceAnimation, value: isShaking)
+        }
     }
 }

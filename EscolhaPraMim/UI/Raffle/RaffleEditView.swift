@@ -32,7 +32,7 @@ struct RaffleEditView: View {
                         .disabled(title.isEmpty)
                 }
             })
-            .navigationTitle("Editar sorteio")
+            .navigationTitle("Editar escolha")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 isFieldFocused = true
