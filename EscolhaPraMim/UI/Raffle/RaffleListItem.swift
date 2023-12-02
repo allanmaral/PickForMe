@@ -20,7 +20,7 @@ struct RaffleListItem: View {
                 Text(raffle.title)
                     .font(.headline)
                 
-                Text(raffle.createdAt.formatted(.relative(presentation: .named)))
+                Text(raffle.updatedAt.formatted(.relative(presentation: .named)))
                     .font(.callout)
             }
         }

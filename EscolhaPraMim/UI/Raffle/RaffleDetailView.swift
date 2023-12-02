@@ -114,6 +114,7 @@ struct RaffleDetailView: View {
         withAnimation {
             let option = RaffleOption(content: newOptionContent, order: raffle.options.count)
             raffle.options.append(option)
+            raffle.updatedAt = .now
             newOptionContent = ""
         }
     }
@@ -152,6 +153,7 @@ struct RaffleDetailView: View {
                 let chosenIndex = raffle.options.indices.randomElement()
                 if let chosenIndex {
                     raffle.options[chosenIndex].flipped = false
+                    raffle.updatedAt = .now
                 }
             }
         }

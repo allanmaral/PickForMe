@@ -13,16 +13,32 @@ struct RaffleListingView: View {
     
     @Query(sort: \Raffle.title) var raffles: [Raffle]
     
+    var edit: (Raffle) -> Void
+    
     var body: some View {
         List {
             ForEach(raffles) { raffle in
                 RaffleListItem(raffle)
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            delete(raffle)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                        
+                        Button {
+                            edit(raffle)
+                        } label: {
+                            Label("Edit", systemImage: "pencil")
+                        }
+                        .tint(.orange)
+                    }
             }
-            .onDelete(perform: deleteRaffles)
         }
     }
     
-    init(searchString: String, sort: SortDescriptor<Raffle>) {
+    init(searchString: String, sort: SortDescriptor<Raffle>, onEditRaffle: @escaping (Raffle) -> Void) {
+        edit = onEditRaffle
         _raffles = Query(filter: #Predicate {
             if searchString.isEmpty {
                 return true
@@ -32,17 +48,14 @@ struct RaffleListingView: View {
         }, sort: [sort])
     }
     
-    func deleteRaffles(_ indexSet: IndexSet) {
-        for index in indexSet {
-            let raffle = raffles[index]
-            modelContext.delete(raffle)
-        }
+    func delete(_ raffle: Raffle) {
+        modelContext.delete(raffle)
     }
 }
 
 #Preview {
     NavigationStack {
-        RaffleListingView(searchString: "", sort: SortDescriptor(\Raffle.title))
+        RaffleListingView(searchString: "", sort: SortDescriptor(\Raffle.title)) { _ in }
     }
     .mockRaffleDataContainer()
 }

@@ -11,16 +11,14 @@ import SwiftData
 @Model
 final class Raffle {
     var title: String
-    var raffled: Bool
-    var createdAt: Date
+    var updatedAt: Date
 
     @Relationship(deleteRule: .cascade)
     var options: [RaffleOption]
     
-    init(_ title: String = "", raffled: Bool = false, options: [RaffleOption] = [], createdAt: Date = .now) {
+    init(_ title: String = "", options: [RaffleOption] = [], updatedAt: Date = .now) {
         self.title = title
-        self.raffled = raffled
         self.options = options
-        self.createdAt = createdAt
+        self.updatedAt = updatedAt
     }
 }
