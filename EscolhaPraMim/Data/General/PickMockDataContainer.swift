@@ -1,5 +1,5 @@
 //
-//  RaffleMockDataContainer.swift
+//  PickMockDataContainer.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 30/11/23.
@@ -23,9 +23,9 @@ public extension View {
         modifier(GenerateDataViewModifier())
     }
     
-    func mockRaffleDataContainer() -> some View {
+    func mockPickDataContainer() -> some View {
         self
             .mockData()
-            .raffleDataContainer(inMemory: true)
+            .pickDataContainer(inMemory: true)
     }
 }

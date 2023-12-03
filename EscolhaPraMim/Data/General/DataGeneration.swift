@@ -9,6 +9,6 @@ import SwiftData
 
 public struct DataGeneration {
     public static func generateAllData(modelContext: ModelContext) {
-        Raffle.generateAll(modelContext: modelContext)
+        Pick.generateAll(modelContext: modelContext)
     }
 }

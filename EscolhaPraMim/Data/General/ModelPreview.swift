@@ -19,7 +19,7 @@ public struct ModelPreview<Model: PersistentModel, Content: View>: View {
         ZStack {
             PreviewContentView(content: content)
         }
-        .mockRaffleDataContainer()
+        .mockPickDataContainer()
     }
     
     struct PreviewContentView: View {

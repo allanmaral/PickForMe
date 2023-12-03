@@ -1,5 +1,5 @@
 //
-//  RaffleListingView.swift
+//  PickListingView.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
@@ -8,26 +8,26 @@
 import SwiftData
 import SwiftUI
 
-struct RaffleListingView: View {
+struct PickListingView: View {
     @Environment(\.modelContext) var modelContext
     
-    @Query(sort: \Raffle.title) var raffles: [Raffle]
+    @Query(sort: \Pick.title) var picks: [Pick]
     
-    var edit: (Raffle) -> Void
+    var edit: (Pick) -> Void
     
     var body: some View {
         List {
-            ForEach(raffles) { raffle in
-                RaffleListItem(raffle)
+            ForEach(picks) { pick in
+                PickListItem(pick)
                     .swipeActions(edge: .trailing) {
                         Button(role: .destructive) {
-                            delete(raffle)
+                            delete(pick)
                         } label: {
                             Label("Delete", systemImage: "trash")
                         }
                         
                         Button {
-                            edit(raffle)
+                            edit(pick)
                         } label: {
                             Label("Edit", systemImage: "pencil")
                         }
@@ -37,9 +37,9 @@ struct RaffleListingView: View {
         }
     }
     
-    init(searchString: String, sort: SortDescriptor<Raffle>, onEditRaffle: @escaping (Raffle) -> Void) {
-        edit = onEditRaffle
-        _raffles = Query(filter: #Predicate {
+    init(searchString: String, sort: SortDescriptor<Pick>, onEditPick: @escaping (Pick) -> Void) {
+        edit = onEditPick
+        _picks = Query(filter: #Predicate {
             if searchString.isEmpty {
                 return true
             } else {
@@ -48,14 +48,14 @@ struct RaffleListingView: View {
         }, sort: [sort])
     }
     
-    func delete(_ raffle: Raffle) {
-        modelContext.delete(raffle)
+    func delete(_ pick: Pick) {
+        modelContext.delete(pick)
     }
 }
 
 #Preview {
     NavigationStack {
-        RaffleListingView(searchString: "", sort: SortDescriptor(\Raffle.title)) { _ in }
+        PickListingView(searchString: "", sort: SortDescriptor(\Pick.title)) { _ in }
     }
-    .mockRaffleDataContainer()
+    .mockPickDataContainer()
 }

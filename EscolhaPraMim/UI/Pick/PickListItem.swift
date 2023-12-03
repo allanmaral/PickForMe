@@ -1,5 +1,5 @@
 //
-//  RaffleListItem.swift
+//  PickListItem.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 01/12/23.
@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct RaffleListItem: View {
-    let raffle: Raffle
+struct PickListItem: View {
+    let pick: Pick
     
-    init(_ raffle: Raffle) {
-        self.raffle = raffle
+    init(_ pick: Pick) {
+        self.pick = pick
     }
     
     var body: some View {
-        NavigationLink(value: raffle) {
+        NavigationLink(value: pick) {
             VStack(alignment: .leading) {
-                Text(raffle.title)
+                Text(pick.title)
                     .font(.headline)
                 
-                Text(raffle.updatedAt.formatted(.relative(presentation: .named)))
+                Text(pick.updatedAt.formatted(.relative(presentation: .named)))
                     .font(.callout)
             }
         }
@@ -28,10 +28,10 @@ struct RaffleListItem: View {
 }
 
 #Preview {
-    ModelPreview { raffle in
+    ModelPreview { pick in
         NavigationStack {
             List {
-                RaffleListItem(raffle)
+                PickListItem(pick)
             }
         }
     }

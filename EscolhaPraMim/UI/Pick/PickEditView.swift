@@ -1,5 +1,5 @@
 //
-//  RaffleEditView.swift
+//  PickEditView.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 01/12/23.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct RaffleEditView: View {
+struct PickEditView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var title: String = ""
     @FocusState private var isFieldFocused
     
-    var raffle: Raffle
+    var pick: Pick
     
     var body: some View {
         NavigationStack {
@@ -36,7 +36,7 @@ struct RaffleEditView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 isFieldFocused = true
-                title = raffle.title
+                title = pick.title
             }
         }
         .presentationDetents([.fraction(0.2)])
@@ -44,17 +44,17 @@ struct RaffleEditView: View {
     
     func save() {
         guard !title.isEmpty else { return }
-        raffle.title = title
-        raffle.updatedAt = .now
+        pick.title = title
+        pick.updatedAt = .now
         dismiss()
     }
 }
 
 #Preview {
-    ModelPreview { raffle in
+    ModelPreview { pick in
         Text("Sample")
             .sheet(isPresented: .constant(true)) {
-                RaffleEditView(raffle: raffle)
+                PickEditView(pick: pick)
             }
     }
 }

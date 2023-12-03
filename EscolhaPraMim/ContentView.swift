@@ -10,11 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        RaffleNavigationStack()
+        PickNavigationStack()
     }
 }
 
 #Preview {
     ContentView()
-        .mockRaffleDataContainer()
+        .mockPickDataContainer()
 }

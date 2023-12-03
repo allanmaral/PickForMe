@@ -1,5 +1,5 @@
 //
-//  RaffleDetailView.swift
+//  PickDetailView.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
@@ -8,9 +8,9 @@
 import SwiftData
 import SwiftUI
 
-struct RaffleDetailView: View {
+struct PickDetailView: View {
     @Environment(\.dismiss) var dismiss
-    @Bindable var raffle: Raffle
+    @Bindable var pick: Pick
     
     @State private var newOptionContent = ""
     @FocusState private var isNewOptionFocused
@@ -26,7 +26,7 @@ struct RaffleDetailView: View {
         }
         .onTapGesture(perform: endEditing)
         .overlay(alignment: .bottom, content: { chooseForMeButton })
-        .navigationTitle(raffle.title)
+        .navigationTitle(pick.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button("Shuffle", systemImage: "shuffle", action: shuffle)
@@ -48,7 +48,7 @@ struct RaffleDetailView: View {
     
     var optionsGrid: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
-            ForEach(raffle.options.sorted(by: { $0.order < $1.order })) { option in
+            ForEach(pick.options.sorted(by: { $0.order < $1.order })) { option in
                 CardView(card: Card(content: option.content, flipped: deletingAnimationState != .notAppeared ? false : option.flipped))
                     .aspectRatio(5/6, contentMode: .fit)
                     .overlay(alignment: .topLeading, content: {
@@ -77,8 +77,8 @@ struct RaffleDetailView: View {
     
     @ViewBuilder
     var chooseForMeButton: some View {
-        if raffle.options.count >= 2 {
-            Button("Escolha para mim!", action: raffleOption)
+        if pick.options.count >= 2 {
+            Button("Escolha para mim!", action: pickOption)
                 .foregroundColor(.white)
                 .padding()
                 .background(Color.accentColor)
@@ -93,16 +93,16 @@ struct RaffleDetailView: View {
         deletingAnimationState = .notAppeared
     }
     
-    func flip(_ option: RaffleOption) {
+    func flip(_ option: PickOption) {
         endEditing()
         withAnimation {
             option.flipped.toggle()
         }
     }
     
-    func remove(_ option: RaffleOption) {
+    func remove(_ option: PickOption) {
         withAnimation {
-            raffle.options = raffle.options.filter { $0.id != option.id }
+            pick.options = pick.options.filter { $0.id != option.id }
         }
     }
     
@@ -110,9 +110,9 @@ struct RaffleDetailView: View {
         guard newOptionContent.isEmpty == false else { return }
         
         withAnimation {
-            let option = RaffleOption(content: newOptionContent, order: raffle.options.count)
-            raffle.options.append(option)
-            raffle.updatedAt = .now
+            let option = PickOption(content: newOptionContent, order: pick.options.count)
+            pick.options.append(option)
+            pick.updatedAt = .now
             newOptionContent = ""
         }
     }
@@ -122,24 +122,24 @@ struct RaffleDetailView: View {
         
         withAnimation {
             var order = 0
-            for optionIndex in raffle.options.indices.shuffled() {
-                raffle.options[optionIndex].order = order
-                raffle.options[optionIndex].flipped = true
+            for optionIndex in pick.options.indices.shuffled() {
+                pick.options[optionIndex].order = order
+                pick.options[optionIndex].flipped = true
                 order += 1
             }
         }
     }
     
-    func raffleOption() {
+    func pickOption() {
         endEditing()
         
         var delay: TimeInterval = 0
         for _ in 0..<5 {
             withAnimation(.linear(duration: 0.3).delay(delay)) {
                 var order = 0
-                for optionIndex in raffle.options.indices.shuffled() {
-                    raffle.options[optionIndex].flipped = true
-                    raffle.options[optionIndex].order = order
+                for optionIndex in pick.options.indices.shuffled() {
+                    pick.options[optionIndex].flipped = true
+                    pick.options[optionIndex].order = order
                     order += 1
                 }
             }
@@ -149,11 +149,11 @@ struct RaffleDetailView: View {
         pickTimer?.invalidate()
         pickTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
             withAnimation {
-                let chosenIndex = raffle.options.indices.randomElement()
-                for optionIndex in raffle.options.indices {
-                    raffle.options[optionIndex].flipped = optionIndex != chosenIndex
+                let chosenIndex = pick.options.indices.randomElement()
+                for optionIndex in pick.options.indices {
+                    pick.options[optionIndex].flipped = optionIndex != chosenIndex
                 }
-                raffle.updatedAt = .now
+                pick.updatedAt = .now
             }
         }
     }
@@ -179,7 +179,7 @@ struct RaffleDetailView: View {
 }
 
 #Preview {
-    ModelPreview { raffle in
-        RaffleDetailView(raffle: raffle)
+    ModelPreview { pick in
+        PickDetailView(pick: pick)
     }
 }

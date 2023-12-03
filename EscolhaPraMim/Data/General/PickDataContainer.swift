@@ -1,5 +1,5 @@
 //
-//  RaffleDataContainer.swift
+//  PickDataContainer.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 30/11/23.
@@ -8,12 +8,12 @@
 import SwiftUI
 import SwiftData
 
-struct RaffleDataContainerViewModifier: ViewModifier {
+struct PickDataContainerViewModifier: ViewModifier {
     let container: ModelContainer
     
     init(inMemory: Bool) {
         container = try! ModelContainer(
-            for: Schema([Raffle.self]),
+            for: Schema([Pick.self]),
             configurations: [ModelConfiguration(isStoredInMemoryOnly: inMemory)]
         )
     }
@@ -24,8 +24,8 @@ struct RaffleDataContainerViewModifier: ViewModifier {
 }
 
 public extension View {
-    func raffleDataContainer(inMemory: Bool = DataGenerationOptions.inMemoryPersistence) -> some View {
-        modifier(RaffleDataContainerViewModifier(inMemory: inMemory))
+    func pickDataContainer(inMemory: Bool = DataGenerationOptions.inMemoryPersistence) -> some View {
+        modifier(PickDataContainerViewModifier(inMemory: inMemory))
     }
 }
 

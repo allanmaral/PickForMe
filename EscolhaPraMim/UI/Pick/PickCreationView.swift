@@ -1,5 +1,5 @@
 //
-//  RaffleCreationView.swift
+//  PickCreationView.swift
 //  EscolhaPraMim
 //
 //  Created by Allan Amaral on 22/11/23.
@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct RaffleCreationView: View {
+struct PickCreationView: View {
     @Environment(\.dismiss) private var onDismiss
     @State private var title: String = ""
     
@@ -50,6 +50,6 @@ struct RaffleCreationView: View {
 #Preview {
     Text("Sample")
         .sheet(isPresented: .constant(true)) {
-            RaffleCreationView() { _ in }
+            PickCreationView() { _ in }
         }
 }
