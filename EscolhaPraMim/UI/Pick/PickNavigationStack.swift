@@ -37,12 +37,12 @@ struct PickNavigationStack: View {
     @ViewBuilder
     var toolbar: some View {
         sortPicker
-        Button("Nova escolha", systemImage: "plus", action: showCreationForm)
+        Button("Criar Escolha", systemImage: "plus", action: showCreationForm)
     }
     
     var sortPicker: some View {
-        Menu("Sort", systemImage: "arrow.up.arrow.down") {
-            Picker("Sort", selection: $sortOrder) {
+        Menu("Ordenar", systemImage: "arrow.up.arrow.down") {
+            Picker("Ordenar", selection: $sortOrder) {
                 Text("Título")
                     .tag(SortDescriptor(\Pick.title))
                 
