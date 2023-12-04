@@ -31,7 +31,7 @@ struct PickCreationView: View {
                         .disabled(title.isEmpty)
                 }
             })
-            .navigationTitle("Nova escolha")
+            .navigationTitle("Nova Escolha")
             .navigationBarTitleDisplayMode(.inline)
         }
         .presentationDetents([.fraction(0.2)])

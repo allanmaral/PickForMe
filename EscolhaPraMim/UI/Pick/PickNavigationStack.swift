@@ -43,10 +43,10 @@ struct PickNavigationStack: View {
     var sortPicker: some View {
         Menu("Ordenar", systemImage: "arrow.up.arrow.down") {
             Picker("Ordenar", selection: $sortOrder) {
-                Text("Título")
+                Text("Ordenar por Nome")
                     .tag(SortDescriptor(\Pick.title))
                 
-                Text("Data")
+                Text("Ordernar por Data")
                     .tag(SortDescriptor(\Pick.updatedAt))
             }
             .pickerStyle(.inline)

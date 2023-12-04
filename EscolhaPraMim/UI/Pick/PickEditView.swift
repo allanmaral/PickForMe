@@ -32,7 +32,7 @@ struct PickEditView: View {
                         .disabled(title.isEmpty)
                 }
             })
-            .navigationTitle("Editar escolha")
+            .navigationTitle("Editar Escolha")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 isFieldFocused = true
