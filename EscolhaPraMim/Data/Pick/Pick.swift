@@ -21,4 +21,9 @@ final class Pick {
         self.options = options
         self.updatedAt = updatedAt
     }
+    
+    func set(title: String) {
+        self.title = title
+        updatedAt = .now
+    }
 }

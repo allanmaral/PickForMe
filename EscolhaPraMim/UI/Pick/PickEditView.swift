@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PickEditView: View {
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) private var onDismiss
     @State private var title: String = ""
     @FocusState private var isFieldFocused
     
@@ -24,7 +24,7 @@ struct PickEditView: View {
             }
             .toolbar(content: {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar", action: { dismiss() })
+                    Button("Cancelar", action: dismiss)
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
@@ -42,11 +42,16 @@ struct PickEditView: View {
         .presentationDetents([.fraction(0.2)])
     }
     
+    // MARK: - Intents
+    
     func save() {
         guard !title.isEmpty else { return }
-        pick.title = title
-        pick.updatedAt = .now
-        dismiss()
+        pick.set(title: title)
+        onDismiss()
+    }
+    
+    func dismiss() {
+        onDismiss()
     }
 }
 

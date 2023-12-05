@@ -20,7 +20,10 @@ struct PickNavigationStack: View {
         NavigationStack(path: $path) {
             PickListingView(searchString: searchText, sort: sortOrder, onEditPick: showEditForm)
                 .searchable(text: $searchText)
-                .toolbar { toolbar }
+                .toolbar {
+                    sortPicker
+                    Button("Criar Escolha", systemImage: "plus", action: showCreationForm)
+                }
                 .navigationTitle("Escolha pra mim!")
                 .navigationDestination(for: Pick.self) { pick in
                     PickDetailView(pick: pick)
@@ -32,12 +35,6 @@ struct PickNavigationStack: View {
                     PickEditView(pick: pick)
                 }
         }
-    }
-    
-    @ViewBuilder
-    var toolbar: some View {
-        sortPicker
-        Button("Criar Escolha", systemImage: "plus", action: showCreationForm)
     }
     
     var sortPicker: some View {

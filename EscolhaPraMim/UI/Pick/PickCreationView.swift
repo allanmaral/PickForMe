@@ -21,7 +21,7 @@ struct PickCreationView: View {
                     .submitLabel(.done)
                     .onSubmit(create)
             }
-            .toolbar(content: {
+            .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancelar", action: dismiss)
                 }
@@ -30,12 +30,14 @@ struct PickCreationView: View {
                     Button("Criar", action: create)
                         .disabled(title.isEmpty)
                 }
-            })
+            }
             .navigationTitle("Nova Escolha")
             .navigationBarTitleDisplayMode(.inline)
         }
         .presentationDetents([.fraction(0.2)])
     }
+    
+    // MARK: - Intents
     
     func create() {
         guard !title.isEmpty else { return }
