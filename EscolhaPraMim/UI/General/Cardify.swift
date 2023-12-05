@@ -37,7 +37,7 @@ struct Cardify: ViewModifier, Animatable {
         .rotation3DEffect(.degrees(rotation), axis: (0,1,0))
     }
     
-    private struct Constants {
+    private enum Constants {
         static let cornerRadius: CGFloat = 12
         static let lineWidth: CGFloat = 2
     }

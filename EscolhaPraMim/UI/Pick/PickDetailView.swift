@@ -134,8 +134,8 @@ struct PickDetailView: View {
         endEditing()
         
         var delay: TimeInterval = 0
-        for _ in 0..<5 {
-            withAnimation(.linear(duration: 0.3).delay(delay)) {
+        for _ in 0..<Constants.Shuffle.count {
+            withAnimation(.linear(duration: Constants.Shuffle.duration).delay(delay)) {
                 var order = 0
                 for optionIndex in pick.options.indices.shuffled() {
                     pick.options[optionIndex].flipped = true
@@ -143,11 +143,11 @@ struct PickDetailView: View {
                     order += 1
                 }
             }
-            delay += 0.25
+            delay += Constants.Shuffle.delay
         }
         
         pickTimer?.invalidate()
-        pickTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
+        pickTimer = Timer.scheduledTimer(withTimeInterval: Constants.Shuffle.cardRevealDelay, repeats: false) { _ in
             withAnimation {
                 let chosenIndex = pick.options.indices.randomElement()
                 for optionIndex in pick.options.indices {
@@ -176,6 +176,15 @@ struct PickDetailView: View {
         }
     }
     
+    private enum Constants {
+        
+        enum Shuffle {
+            static let count = 5
+            static let duration: TimeInterval = 0.3
+            static let delay: TimeInterval = 0.25
+            static let cardRevealDelay = TimeInterval(Shuffle.count + 1) * Shuffle.delay
+        }
+    }
 }
 
 #Preview {
