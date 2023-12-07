@@ -15,6 +15,7 @@ struct PickDetailView: View {
     @State private var newOptionContent = ""
     @FocusState private var isNewOptionFocused
     @State private var pickTimer: Timer?
+    @StateObject private var delete = DeletionViewModel()
     
     var body: some View {
         ZStack {
@@ -49,26 +50,14 @@ struct PickDetailView: View {
     var optionsGrid: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
             ForEach(pick.options.sorted(by: { $0.order < $1.order })) { option in
-                CardView(card: Card(content: option.content, flipped: deletingAnimationState != .notAppeared ? false : option.flipped))
+                CardView(card: Card(content: option.content, flipped: delete.deleting ? false : option.flipped))
                     .aspectRatio(5/6, contentMode: .fit)
                     .overlay(alignment: .topLeading, content: {
-                        if deletingAnimationState != .notAppeared {
-                            Image(systemName: "minus")
-                                .fontWeight(.bold)
-                                .foregroundStyle(Color.black)
-                                .frame(width: 32, height: 32)
-                                .background(Circle().fill(.gray))
-                                .transition(.scale(scale: 0.0, anchor: UnitPoint(x: 0.1, y: 0.1)))
-                                .frame(width: 44, height: 44)
-                                .offset(x: -16, y: -16)
-                                .onTapGesture {
-                                    remove(option)
-                                }
-                        }
+                        deleteButton(for: option)
                     })
-                    .shake(isShaking: deletingAnimationState == .shaking)
+                    .shake(isShaking: delete.shouldShake)
                     .onTapGesture { flip(option) }
-                    .onLongPressGesture(perform: enterDeletionMode)
+                    .onLongPressGesture(perform: delete.enterDeletionMode)
                 
             }
         })
@@ -88,9 +77,26 @@ struct PickDetailView: View {
         }
     }
     
+    @ViewBuilder
+    func deleteButton(for option: PickOption) -> some View {
+        if delete.deleting {
+            Image(systemName: "minus")
+                .fontWeight(.bold)
+                .foregroundStyle(Color.black)
+                .frame(width: 32, height: 32)
+                .background(Circle().fill(.gray))
+                .transition(.scale(scale: 0.0, anchor: UnitPoint(x: 0.1, y: 0.1)))
+                .frame(width: 44, height: 44)
+                .offset(x: -16, y: -16)
+                .onTapGesture {
+                    remove(option)
+                }
+        }
+    }
+    
     func endEditing() {
         isNewOptionFocused = false
-        deletingAnimationState = .notAppeared
+        delete.leaveDeletionMode()
     }
     
     func flip(_ option: PickOption) {
@@ -154,24 +160,6 @@ struct PickDetailView: View {
                     pick.options[optionIndex].flipped = optionIndex != chosenIndex
                 }
                 pick.updatedAt = .now
-            }
-        }
-    }
-    
-    enum DeletingAnimationState {
-        case notAppeared, appeared, shaking
-    }
-    
-    @State var deletingAnimationState: DeletingAnimationState = .notAppeared
-    
-    func enterDeletionMode() {
-        let delay = 0.3
-        withAnimation(.easeInOut(duration: delay)) {
-            deletingAnimationState = .appeared
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            withAnimation (.easeInOut.repeatForever()) {
-                deletingAnimationState = .shaking
             }
         }
     }
