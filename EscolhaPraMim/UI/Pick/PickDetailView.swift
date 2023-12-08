@@ -9,13 +9,9 @@ import SwiftData
 import SwiftUI
 
 struct PickDetailView: View {
+    @Bindable var viewModel: PickDetailViewModel
     @Environment(\.dismiss) var dismiss
-    @Bindable var pick: Pick
-    
-    @State private var newOptionContent = ""
     @FocusState private var isNewOptionFocused
-    @State private var pickTimer: Timer?
-    @StateObject private var delete = DeletionViewModel()
     
     var body: some View {
         ZStack {
@@ -25,23 +21,30 @@ struct PickDetailView: View {
                 optionsGrid.padding()
             }
         }
-        .onTapGesture(perform: endEditing)
+        .sync($viewModel.focusNewOption, with: _isNewOptionFocused)
+        .onTapGesture { viewModel.stopEditing() }
         .overlay(alignment: .bottom, content: { chooseForMeButton })
-        .navigationTitle(pick.title)
+        .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            Button("Shuffle", systemImage: "shuffle", action: shuffle)
+            Button("Shuffle", systemImage: "shuffle") {
+                withAnimation { viewModel.shuffle() }
+            }
         }
     }
     
     var newOptionInput: some View {
         HStack {
-            TextField("Nova opção", text: $newOptionContent)
+            TextField("Nova opção", text: $viewModel.newOptionContent)
                 .submitLabel(.done)
                 .focused($isNewOptionFocused)
-                .onSubmit(addOption)
+                .onSubmit {
+                    withAnimation { viewModel.addOption() }
+                }
             
-            Button("Adicionar", action: addOption)
+            Button("Adicionar") {
+                withAnimation { viewModel.addOption() }
+            }
         }
         .padding()
         .background(RoundedRectangle(cornerRadius: 12).fill(.inputBackground))
@@ -49,15 +52,19 @@ struct PickDetailView: View {
     
     var optionsGrid: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
-            ForEach(pick.options.sorted(by: { $0.order < $1.order })) { option in
-                CardView(card: Card(content: option.content, flipped: delete.deleting ? false : option.flipped))
+            ForEach(viewModel.options) { option in
+                CardView(card: Card(content: option.content, flipped: viewModel.deleting ? false : option.flipped))
                     .aspectRatio(5/6, contentMode: .fit)
                     .overlay(alignment: .topLeading, content: {
                         deleteButton(for: option)
                     })
-                    .shake(isShaking: delete.shouldShake)
-                    .onTapGesture { flip(option) }
-                    .onLongPressGesture(perform: delete.enterDeletionMode)
+                    .shake(isShaking: viewModel.shaking)
+                    .onTapGesture {
+                        withAnimation { viewModel.flip(option) }
+                    }
+                    .onLongPressGesture {
+                        withAnimation { viewModel.startDeleting() }
+                    }
                 
             }
         })
@@ -66,7 +73,7 @@ struct PickDetailView: View {
     
     @ViewBuilder
     var chooseForMeButton: some View {
-        if pick.options.count >= 2 {
+        if viewModel.shouldShowPickButton {
             Button("Escolha para mim!", action: pickOption)
                 .foregroundColor(.white)
                 .padding()
@@ -79,7 +86,7 @@ struct PickDetailView: View {
     
     @ViewBuilder
     func deleteButton(for option: PickOption) -> some View {
-        if delete.deleting {
+        if viewModel.deleting {
             Image(systemName: "minus")
                 .fontWeight(.bold)
                 .foregroundStyle(Color.black)
@@ -89,83 +96,28 @@ struct PickDetailView: View {
                 .frame(width: 44, height: 44)
                 .offset(x: -16, y: -16)
                 .onTapGesture {
-                    remove(option)
+                    withAnimation { viewModel.remove(option) }
                 }
-        }
-    }
-    
-    func endEditing() {
-        isNewOptionFocused = false
-        delete.leaveDeletionMode()
-    }
-    
-    func flip(_ option: PickOption) {
-        endEditing()
-        withAnimation {
-            option.flipped.toggle()
-        }
-    }
-    
-    func remove(_ option: PickOption) {
-        withAnimation {
-            pick.options = pick.options.filter { $0.id != option.id }
-        }
-    }
-    
-    func addOption() {
-        guard newOptionContent.isEmpty == false else { return }
-        
-        withAnimation {
-            let option = PickOption(content: newOptionContent, order: pick.options.count)
-            pick.options.append(option)
-            pick.updatedAt = .now
-            newOptionContent = ""
-        }
-    }
-    
-    func shuffle() {
-        endEditing()
-        
-        withAnimation {
-            var order = 0
-            for optionIndex in pick.options.indices.shuffled() {
-                pick.options[optionIndex].order = order
-                pick.options[optionIndex].flipped = true
-                order += 1
-            }
         }
     }
     
     func pickOption() {
-        endEditing()
-        
         var delay: TimeInterval = 0
         for _ in 0..<Constants.Shuffle.count {
             withAnimation(.linear(duration: Constants.Shuffle.duration).delay(delay)) {
-                var order = 0
-                for optionIndex in pick.options.indices.shuffled() {
-                    pick.options[optionIndex].flipped = true
-                    pick.options[optionIndex].order = order
-                    order += 1
-                }
+                viewModel.shuffle()
             }
             delay += Constants.Shuffle.delay
         }
         
-        pickTimer?.invalidate()
-        pickTimer = Timer.scheduledTimer(withTimeInterval: Constants.Shuffle.cardRevealDelay, repeats: false) { _ in
+        viewModel.debounce(after: Constants.Shuffle.cardRevealDelay) {
             withAnimation {
-                let chosenIndex = pick.options.indices.randomElement()
-                for optionIndex in pick.options.indices {
-                    pick.options[optionIndex].flipped = optionIndex != chosenIndex
-                }
-                pick.updatedAt = .now
+                viewModel.pickOption()
             }
         }
     }
     
     private enum Constants {
-        
         enum Shuffle {
             static let count = 5
             static let duration: TimeInterval = 0.3
@@ -177,6 +129,6 @@ struct PickDetailView: View {
 
 #Preview {
     ModelPreview { pick in
-        PickDetailView(pick: pick)
+        PickDetailView(viewModel: PickDetailViewModel(pick: pick))
     }
 }

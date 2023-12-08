@@ -26,7 +26,7 @@ struct PickNavigationStack: View {
                 }
                 .navigationTitle("Escolha pra mim!")
                 .navigationDestination(for: Pick.self) { pick in
-                    PickDetailView(pick: pick)
+                    PickDetailView(viewModel: PickDetailViewModel(pick: pick))
                 }
                 .sheet(isPresented: $showCreatePick) {
                     PickCreationView(onCreate: createPick)
