@@ -13,10 +13,10 @@ import SwiftData
 final class PickDetailViewModel {
     private(set) var pick: Pick
     private var pickTimer: Timer?
-    private var delete = DeletionViewModel()
     
     var focusNewOption: Bool = false
     var newOptionContent: String = ""
+    var deleting: Bool = false
     
     init(pick: Pick) {
         self.pick = pick
@@ -30,14 +30,6 @@ final class PickDetailViewModel {
         pick.options.sorted(by: { $0.order < $1.order })
     }
     
-    var deleting: Bool {
-        delete.deleting
-    }
-    
-    var shaking: Bool {
-        delete.shouldShake
-    }
-    
     var shouldShowPickButton: Bool {
         pick.options.count >= 2
     }
@@ -45,16 +37,12 @@ final class PickDetailViewModel {
     // MARK: - Intents
     
     func startDeleting() {
-        delete.enterDeletionMode()
-    }
-    
-    func stopDeleting() {
-        delete.leaveDeletionMode()
+        deleting = true
     }
     
     func stopEditing() {
         focusNewOption = false
-        delete.leaveDeletionMode()
+        deleting = false
     }
     
     func flip(_ option: PickOption) {

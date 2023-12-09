@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PickDetailView: View {
     @Bindable var viewModel: PickDetailViewModel
+    @Bindable private var deletionState = DeletionState()
     @Environment(\.dismiss) var dismiss
     @FocusState private var isNewOptionFocused
     
@@ -22,7 +23,12 @@ struct PickDetailView: View {
             }
         }
         .sync($viewModel.focusNewOption, with: _isNewOptionFocused)
-        .onTapGesture { viewModel.stopEditing() }
+        .sync($viewModel.deleting, with: deletionState)
+        .onTapGesture {
+            withAnimation(.easeInOut) {
+                viewModel.stopEditing()                
+            }
+        }
         .overlay(alignment: .bottom, content: { chooseForMeButton })
         .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)
@@ -53,17 +59,17 @@ struct PickDetailView: View {
     var optionsGrid: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], content: {
             ForEach(viewModel.options) { option in
-                CardView(card: Card(content: option.content, flipped: viewModel.deleting ? false : option.flipped))
+                CardView(card: Card(content: option.content, flipped: deletionState.deleting ? false : option.flipped))
                     .aspectRatio(5/6, contentMode: .fit)
                     .overlay(alignment: .topLeading, content: {
                         deleteButton(for: option)
                     })
-                    .shake(isShaking: viewModel.shaking)
+                    .shake(isShaking: deletionState.shaking)
                     .onTapGesture {
                         withAnimation { viewModel.flip(option) }
                     }
                     .onLongPressGesture {
-                        withAnimation { viewModel.startDeleting() }
+                        viewModel.startDeleting()
                     }
                 
             }
@@ -86,7 +92,7 @@ struct PickDetailView: View {
     
     @ViewBuilder
     func deleteButton(for option: PickOption) -> some View {
-        if viewModel.deleting {
+        if deletionState.deleting {
             Image(systemName: "minus")
                 .fontWeight(.bold)
                 .foregroundStyle(Color.black)

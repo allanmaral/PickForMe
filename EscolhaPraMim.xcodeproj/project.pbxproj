@@ -17,7 +17,7 @@
 		9DB042AB2B19871C00D1A531 /* PickNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042AA2B19871C00D1A531 /* PickNavigationStack.swift */; };
 		9DB042AE2B198B5000D1A531 /* PickListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042AD2B198B5000D1A531 /* PickListItem.swift */; };
 		9DB042B22B1AACD200D1A531 /* PickEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042B12B1AACD200D1A531 /* PickEditView.swift */; };
-		9DB042B42B1FDB5100D1A531 /* DeletionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042B32B1FDB5100D1A531 /* DeletionViewModel.swift */; };
+		9DB042B42B1FDB5100D1A531 /* DeletionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042B32B1FDB5100D1A531 /* DeletionState.swift */; };
 		9DB042B62B229C6F00D1A531 /* PickDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042B52B229C6F00D1A531 /* PickDetailViewModel.swift */; };
 		9DB042B82B229EB400D1A531 /* View+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB042B72B229EB400D1A531 /* View+Sync.swift */; };
 		9DDBBAFB2B1244C000250DBE /* EscolhaPraMimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBAFA2B1244C000250DBE /* EscolhaPraMimApp.swift */; };
@@ -45,7 +45,7 @@
 		9DB042AA2B19871C00D1A531 /* PickNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickNavigationStack.swift; sourceTree = "<group>"; };
 		9DB042AD2B198B5000D1A531 /* PickListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickListItem.swift; sourceTree = "<group>"; };
 		9DB042B12B1AACD200D1A531 /* PickEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEditView.swift; sourceTree = "<group>"; };
-		9DB042B32B1FDB5100D1A531 /* DeletionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletionViewModel.swift; sourceTree = "<group>"; };
+		9DB042B32B1FDB5100D1A531 /* DeletionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletionState.swift; sourceTree = "<group>"; };
 		9DB042B52B229C6F00D1A531 /* PickDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDetailViewModel.swift; sourceTree = "<group>"; };
 		9DB042B72B229EB400D1A531 /* View+Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Sync.swift"; sourceTree = "<group>"; };
 		9DDBBAF72B1244C000250DBE /* EscolhaPraMim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscolhaPraMim.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +112,7 @@
 		9DB042B02B198DC500D1A531 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				9DB042B32B1FDB5100D1A531 /* DeletionViewModel.swift */,
+				9DB042B32B1FDB5100D1A531 /* DeletionState.swift */,
 				9DDBBB152B1246A500250DBE /* CardView.swift */,
 				9DDBBB182B1247B300250DBE /* Cardify.swift */,
 				9DA424692B156CD700378846 /* Shake.swift */,
@@ -269,7 +269,7 @@
 				9DB042AB2B19871C00D1A531 /* PickNavigationStack.swift in Sources */,
 				9DDBBB162B1246A500250DBE /* CardView.swift in Sources */,
 				9DDBBB112B12460C00250DBE /* PickDetailView.swift in Sources */,
-				9DB042B42B1FDB5100D1A531 /* DeletionViewModel.swift in Sources */,
+				9DB042B42B1FDB5100D1A531 /* DeletionState.swift in Sources */,
 				9DDBBB192B1247B300250DBE /* Cardify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
