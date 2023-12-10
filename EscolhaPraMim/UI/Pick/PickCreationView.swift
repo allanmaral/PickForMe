@@ -17,21 +17,21 @@ struct PickCreationView: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Nome", text: $title)
+                TextField("Name", text: $title)
                     .submitLabel(.done)
                     .onSubmit(create)
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar", action: dismiss)
+                    Button("Cancel", action: dismiss)
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Criar", action: create)
+                    Button("Create", action: create)
                         .disabled(title.isEmpty)
                 }
             }
-            .navigationTitle("Nova Escolha")
+            .navigationTitle("New Pick")
             .navigationBarTitleDisplayMode(.inline)
         }
         .presentationDetents([.fraction(0.2)])

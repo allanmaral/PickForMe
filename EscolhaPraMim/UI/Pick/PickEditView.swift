@@ -17,22 +17,22 @@ struct PickEditView: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Nome", text: $title)
+                TextField("Name", text: $title)
                     .submitLabel(.done)
                     .focused($isFieldFocused)
                     .onSubmit(save)
             }
             .toolbar(content: {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar", action: dismiss)
+                    Button("Cancel", action: dismiss)
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Salvar", action: save)
+                    Button("Save", action: save)
                         .disabled(title.isEmpty)
                 }
             })
-            .navigationTitle("Editar Escolha")
+            .navigationTitle("Edit Pick")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 isFieldFocused = true

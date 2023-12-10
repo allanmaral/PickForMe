@@ -1,11 +1,35 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Adicionar" : {
-
+    "Add" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
+          }
+        }
+      }
     },
-    "Cancelar" : {
-
+    "Cancel" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar"
+          }
+        }
+      }
     },
     "Create Pick" : {
       "localizations" : {
@@ -16,9 +40,6 @@
           }
         }
       }
-    },
-    "Criar" : {
-
     },
     "Delete" : {
       "localizations" : {
@@ -40,11 +61,45 @@
         }
       }
     },
-    "Editar Escolha" : {
-
+    "Edit Pick" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Escolha"
+          }
+        }
+      }
     },
-    "Escolha para mim!" : {
-
+    "Name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome"
+          }
+        }
+      }
+    },
+    "New option" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova opção"
+          }
+        }
+      }
+    },
+    "New Pick" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Escolha"
+          }
+        }
+      }
     },
     "No Pick" : {
       "localizations" : {
@@ -56,15 +111,6 @@
         }
       }
     },
-    "Nome" : {
-
-    },
-    "Nova Escolha" : {
-
-    },
-    "Nova opção" : {
-
-    },
     "Pick for me!" : {
       "localizations" : {
         "pt-BR" : {
@@ -75,8 +121,15 @@
         }
       }
     },
-    "Salvar" : {
-
+    "Save" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Savar"
+          }
+        }
+      }
     },
     "Shuffle" : {
       "localizations" : {

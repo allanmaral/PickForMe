@@ -41,14 +41,14 @@ struct PickDetailView: View {
     
     var newOptionInput: some View {
         HStack {
-            TextField("Nova opção", text: $viewModel.newOptionContent)
+            TextField("New option", text: $viewModel.newOptionContent)
                 .submitLabel(.done)
                 .focused($isNewOptionFocused)
                 .onSubmit {
                     withAnimation { viewModel.addOption() }
                 }
             
-            Button("Adicionar") {
+            Button("Add") {
                 withAnimation { viewModel.addOption() }
             }
         }
@@ -80,7 +80,7 @@ struct PickDetailView: View {
     @ViewBuilder
     var chooseForMeButton: some View {
         if viewModel.shouldShowPickButton {
-            Button("Escolha para mim!", action: pickOption)
+            Button("Pick for me!", action: pickOption)
                 .foregroundColor(.white)
                 .padding()
                 .background(Color.accentColor)
