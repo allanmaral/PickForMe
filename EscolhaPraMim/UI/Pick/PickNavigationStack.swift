@@ -22,9 +22,9 @@ struct PickNavigationStack: View {
                 .searchable(text: $searchText)
                 .toolbar {
                     sortPicker
-                    Button("Criar Escolha", systemImage: "plus", action: showCreationForm)
+                    Button("Create Pick", systemImage: "plus", action: showCreationForm)
                 }
-                .navigationTitle("Escolha pra mim!")
+                .navigationTitle("Pick for me!")
                 .navigationDestination(for: Pick.self) { pick in
                     PickDetailView(viewModel: PickDetailViewModel(pick: pick))
                 }
@@ -38,12 +38,12 @@ struct PickNavigationStack: View {
     }
     
     var sortPicker: some View {
-        Menu("Ordenar", systemImage: "arrow.up.arrow.down") {
-            Picker("Ordenar", selection: $sortOrder) {
-                Text("Ordenar por Nome")
+        Menu("Sort", systemImage: "arrow.up.arrow.down") {
+            Picker("Sort", selection: $sortOrder) {
+                Text("Sort by Name")
                     .tag(SortDescriptor(\Pick.title))
                 
-                Text("Ordernar por Data")
+                Text("Sort by Date")
                     .tag(SortDescriptor(\Pick.updatedAt))
             }
             .pickerStyle(.inline)

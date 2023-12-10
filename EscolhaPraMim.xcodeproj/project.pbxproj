@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D56381D2B255FBA00E05343 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9D56381C2B255FBA00E05343 /* Localizable.xcstrings */; };
 		9DA4246A2B156CD700378846 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA424692B156CD700378846 /* Shake.swift */; };
 		9DB0429C2B195AC700D1A531 /* PickDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0429B2B195AC700D1A531 /* PickDataContainer.swift */; };
 		9DB0429E2B1961F800D1A531 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D56381C2B255FBA00E05343 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9DA424692B156CD700378846 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		9DB0429B2B195AC700D1A531 /* PickDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDataContainer.swift; sourceTree = "<group>"; };
 		9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerationOptions.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				9DDBBAFE2B1244C100250DBE /* Assets.xcassets */,
+				9D56381C2B255FBA00E05343 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				9DDBBB022B1244C100250DBE /* Preview Assets.xcassets in Resources */,
 				9DDBBAFF2B1244C100250DBE /* Assets.xcassets in Resources */,
+				9D56381D2B255FBA00E05343 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

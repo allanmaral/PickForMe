@@ -1,0 +1,133 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Adicionar" : {
+
+    },
+    "Cancelar" : {
+
+    },
+    "Create Pick" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar Escolha"
+          }
+        }
+      }
+    },
+    "Criar" : {
+
+    },
+    "Delete" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
+        }
+      }
+    },
+    "Editar Escolha" : {
+
+    },
+    "Escolha para mim!" : {
+
+    },
+    "No Pick" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma Escolha"
+          }
+        }
+      }
+    },
+    "Nome" : {
+
+    },
+    "Nova Escolha" : {
+
+    },
+    "Nova opção" : {
+
+    },
+    "Pick for me!" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha para mim!"
+          }
+        }
+      }
+    },
+    "Salvar" : {
+
+    },
+    "Shuffle" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Embaralhar"
+          }
+        }
+      }
+    },
+    "Sort" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordenar"
+          }
+        }
+      }
+    },
+    "Sort by Date" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordernar pela Data"
+          }
+        }
+      }
+    },
+    "Sort by Name" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordernar pelo Nome"
+          }
+        }
+      }
+    },
+    "To add a pick, tap the create picl icon in the toolbar." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para adicionar uma escolha, toque no ícone Criar Escolha na barra de ferramentas."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

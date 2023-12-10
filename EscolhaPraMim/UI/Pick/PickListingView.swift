@@ -40,7 +40,7 @@ struct PickListingView: View {
         } else if isSearching {
             ContentUnavailableView.search
         } else {
-            ContentUnavailableView("Nenhuma Escolha", systemImage: "questionmark.app.fill", description: Text("Para adicionar uma escolha, toque no ícone Criar Escolha na barra de ferramentas."))
+            ContentUnavailableView("No Pick", systemImage: "questionmark.app.fill", description: Text("To add a pick, tap the create picl icon in the toolbar."))
         }
     }
     
