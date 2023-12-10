@@ -74,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D5638192B255F3100E05343 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9DDBBAFE2B1244C100250DBE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9DB0429A2B195AAF00D1A531 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +153,7 @@
 				9DDBBAFC2B1244C000250DBE /* ContentView.swift */,
 				9DB0429A2B195AAF00D1A531 /* Data */,
 				9DDBBB0D2B12457C00250DBE /* UI */,
-				9DDBBAFE2B1244C100250DBE /* Assets.xcassets */,
+				9D5638192B255F3100E05343 /* Resources */,
 				9DDBBB002B1244C100250DBE /* Preview Content */,
 			);
 			path = EscolhaPraMim;
@@ -220,6 +228,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 9DDBBAEE2B1244C000250DBE;
 			productRefGroup = 9DDBBAF82B1244C000250DBE /* Products */;
