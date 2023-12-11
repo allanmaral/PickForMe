@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D56381D2B255FBA00E05343 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9D56381C2B255FBA00E05343 /* Localizable.xcstrings */; };
+		9D56381F2B26B94200E05343 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9D56381E2B26B94200E05343 /* InfoPlist.xcstrings */; };
 		9DA4246A2B156CD700378846 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA424692B156CD700378846 /* Shake.swift */; };
 		9DB0429C2B195AC700D1A531 /* PickDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0429B2B195AC700D1A531 /* PickDataContainer.swift */; };
 		9DB0429E2B1961F800D1A531 /* DataGenerationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		9D56381C2B255FBA00E05343 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9D56381E2B26B94200E05343 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		9DA424692B156CD700378846 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		9DB0429B2B195AC700D1A531 /* PickDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDataContainer.swift; sourceTree = "<group>"; };
 		9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerationOptions.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				9DDBBAFE2B1244C100250DBE /* Assets.xcassets */,
 				9D56381C2B255FBA00E05343 /* Localizable.xcstrings */,
+				9D56381E2B26B94200E05343 /* InfoPlist.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			files = (
 				9DDBBB022B1244C100250DBE /* Preview Assets.xcassets in Resources */,
 				9DDBBAFF2B1244C100250DBE /* Assets.xcassets in Resources */,
+				9D56381F2B26B94200E05343 /* InfoPlist.xcstrings in Resources */,
 				9D56381D2B255FBA00E05343 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.EscolhaPraMim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.PickForMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -463,7 +467,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.EscolhaPraMim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.PickForMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
