@@ -101,7 +101,7 @@
         }
       }
     },
-    "No Pick" : {
+    "No Picks" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
@@ -171,7 +171,7 @@
         }
       }
     },
-    "To add a pick, tap the create picl icon in the toolbar." : {
+    "To add a pick, tap the create pick icon in the toolbar." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
