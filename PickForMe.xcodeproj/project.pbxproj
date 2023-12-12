@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		9D56381C2B255FBA00E05343 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9D56381E2B26B94200E05343 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		9D590C162B2808F100A0E429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9DA424692B156CD700378846 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		9DB0429B2B195AC700D1A531 /* PickDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDataContainer.swift; sourceTree = "<group>"; };
 		9DB0429D2B1961F800D1A531 /* DataGenerationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerationOptions.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		9DDBBAF92B1244C000250DBE /* PickForMe */ = {
 			isa = PBXGroup;
 			children = (
+				9D590C162B2808F100A0E429 /* Info.plist */,
 				9DB0429A2B195AAF00D1A531 /* Data */,
 				9DDBBB0D2B12457C00250DBE /* UI */,
 				9D5638192B255F3100E05343 /* Resources */,
@@ -424,6 +426,7 @@
 				DEVELOPMENT_TEAM = P54V35B2G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PickForMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Escolha pra mim";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -438,9 +441,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.PickForMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,6 +461,7 @@
 				DEVELOPMENT_TEAM = P54V35B2G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PickForMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Escolha pra mim";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -469,9 +476,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.allanamaral.PickForMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
