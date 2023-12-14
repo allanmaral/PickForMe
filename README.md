@@ -5,7 +5,7 @@
     Escolha pra mim
 </h1>
 
-"Escolha pra mim" é um app que tenta ajudar pessoas indecisas a escolher o que fazer de forma descontraida usando cartinhas de baralho. Ele foi desenvolvido para iOS como uma forma de estudar construções de interfaces e animações usando o SwiftUI e persistência de dados com o SwiftData.
+"Escolha pra mim" é um app que tenta ajudar pessoas indecisas a escolher o que fazer de forma descontraída usando cartinhas de baralho. Ele foi desenvolvido para iOS como uma forma de estudar construções de interfaces e animações usando o SwiftUI e persistência de dados com o SwiftData.
 
 ## 🚀 Iniciando o projeto
 
@@ -22,7 +22,7 @@ Caso queira baixar o projeto e rodar localmente em seu computador, siga os segui
    No terminal, navegue para a pasta onde deseja salvar o código fonte e baixe utilizando o seguinte comando:
 
     ```sh
-      git clone https://github.com/allanmaral/EscolhaPraMim.git
+      git clone https://github.com/allanmaral/PickForMe.git
     ```
 
 1. **Abra o projeto**
@@ -30,7 +30,7 @@ Caso queira baixar o projeto e rodar localmente em seu computador, siga os segui
    Pra abrir o projeto com o Xcode basta rodar:
 
    ```sh
-     open EscolhaPraMim/EscolhaPraMim.xcodeproj  
+     open PickForMe/PickForMe.xcodeproj
    ```
 
 1. **Rode o projeto**
