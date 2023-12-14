@@ -7,6 +7,11 @@
 
 "Escolha pra mim" é um app que tenta ajudar pessoas indecisas a escolher o que fazer de forma descontraída usando cartinhas de baralho. Ele foi desenvolvido para iOS como uma forma de estudar construções de interfaces e animações usando o SwiftUI e persistência de dados com o SwiftData.
 
+<p align="center">
+    <img alt="Examplo de uso" src=".github/img/example.gif" width="108" />
+    <img alt="Imagem loja" src=".github/img/promo.jpg" width="600" />
+</p>
+
 ## 🚀 Iniciando o projeto
 
 Caso queira baixar o projeto e rodar localmente em seu computador, siga os seguintes passos:
