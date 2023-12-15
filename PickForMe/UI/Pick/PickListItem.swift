@@ -18,10 +18,11 @@ struct PickListItem: View {
         NavigationLink(value: pick) {
             VStack(alignment: .leading) {
                 Text(pick.title)
-                    .font(.headline)
+                    .font(.body)
                 
                 Text(pick.updatedAt.formatted(.relative(presentation: .named)))
-                    .font(.callout)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
         }
     }
