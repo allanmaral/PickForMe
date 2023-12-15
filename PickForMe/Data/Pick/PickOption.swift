@@ -19,4 +19,8 @@ final class PickOption {
         self.flipped = flipped
         self.order = order
     }
+    
+    func flip() {
+        flipped.toggle()
+    }
 }

@@ -47,31 +47,23 @@ final class PickDetailViewModel {
     
     func flip(_ option: PickOption) {
         stopEditing()
-        option.flipped.toggle()
+        option.flip()
     }
     
     func remove(_ option: PickOption) {
-        pick.options = pick.options.filter { $0.id != option.id }
+        pick.remove(option)
     }
     
     func addOption() {
         guard newOptionContent.isEmpty == false else { return }
         
-        let option = PickOption(content: newOptionContent, order: pick.options.count)
-        pick.options.append(option)
-        pick.updatedAt = .now
+        pick.add(option: newOptionContent)
         newOptionContent = ""
     }
     
     func shuffle() {
         stopEditing()
-        
-        var order = 0
-        for optionIndex in pick.options.indices.shuffled() {
-            pick.options[optionIndex].order = order
-            pick.options[optionIndex].flipped = true
-            order += 1
-        }
+        pick.shuffle()
     }
     
     func debounce(after delay: TimeInterval, callback: @escaping () -> Void) {
@@ -82,10 +74,6 @@ final class PickDetailViewModel {
     }
     
     func pickOption() {
-        let chosenIndex = pick.options.indices.randomElement()
-        for optionIndex in pick.options.indices {
-            pick.options[optionIndex].flipped = optionIndex != chosenIndex
-        }
-        pick.updatedAt = .now
+        pick.pickOption()
     }
 }
