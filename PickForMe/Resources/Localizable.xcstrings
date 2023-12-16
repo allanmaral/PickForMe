@@ -101,6 +101,16 @@
         }
       }
     },
+    "No Options" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma Opção"
+          }
+        }
+      }
+    },
     "No Picks" : {
       "localizations" : {
         "pt-BR" : {
@@ -117,6 +127,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escolha para mim!"
+          }
+        }
+      }
+    },
+    "Sample" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sample"
           }
         }
       }
@@ -177,6 +197,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Para adicionar uma escolha, toque no ícone Criar Escolha na barra de ferramentas."
+          }
+        }
+      }
+    },
+    "To add an option, insert the description and tap the Add button above." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para adicionar uma opção, digite a descrição e toque no botão Adicionar."
           }
         }
       }

@@ -17,9 +17,18 @@ struct PickDetailView: View {
     var body: some View {
         ZStack {
             Color.formBackground.ignoresSafeArea()
-            ScrollView {
-                newOptionInput.padding()
-                optionsGrid.padding()
+            GeometryReader { proxy in
+                ScrollView {
+                    newOptionInput.padding()
+                    
+                    if !viewModel.options.isEmpty {
+                        optionsGrid.padding()
+                    } else {
+                        emptyState
+                            .padding()
+                            .frame(height: emptyStateHeight(for: proxy.size))
+                    }
+                }
             }
         }
         .sync($viewModel.focusNewOption, with: _isNewOptionFocused)
@@ -77,6 +86,15 @@ struct PickDetailView: View {
         .foregroundStyle(Gradient.backgroundCard)
     }
     
+    var emptyState: some View {
+            ContentUnavailableView(
+                "No Options",
+                systemImage: "rectangle.fill.on.rectangle.fill",
+                description: Text("To add an option, insert the description and tap the Add button above.")
+            )
+        .transition(.identity)
+    }
+    
     @ViewBuilder
     var chooseForMeButton: some View {
         if viewModel.shouldShowPickButton {
@@ -121,6 +139,11 @@ struct PickDetailView: View {
                 viewModel.pickOption()
             }
         }
+    }
+    
+    func emptyStateHeight(for size: CGSize) -> CGFloat {
+        print(size.height)
+        return max(size.height - 120, 250)
     }
     
     private enum Constants {
