@@ -39,7 +39,7 @@ struct PickEditView: View {
                 title = pick.title
             }
         }
-        .presentationDetents([.fraction(0.2)])
+        .presentationDetents([.height(200)])
     }
     
     // MARK: - Intents
