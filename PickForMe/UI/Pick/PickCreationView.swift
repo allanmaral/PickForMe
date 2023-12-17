@@ -34,7 +34,7 @@ struct PickCreationView: View {
             .navigationTitle("New Pick")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .presentationDetents([.fraction(0.2)])
+        .presentationDetents([.height(200)])
     }
     
     // MARK: - Intents
