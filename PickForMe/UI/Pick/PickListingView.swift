@@ -35,6 +35,20 @@ struct PickListingView: View {
                             }
                             .tint(.orange)
                         }
+                        .contextMenu {
+                            Button {
+                                edit(pick)
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            
+                            Button(role: .destructive) {
+                                delete(pick)
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+
                 }
             }
         } else if isSearching {
