@@ -142,8 +142,7 @@ struct PickDetailView: View {
     }
     
     func emptyStateHeight(for size: CGSize) -> CGFloat {
-        print(size.height)
-        return max(size.height - 120, 250)
+        max(size.height - 120, 250)
     }
     
     private enum Constants {
